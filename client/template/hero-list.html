@@ -1,0 +1,6 @@
+Found {{allHeroes.length}} heroes
+<ul>
+  <li ng-repeat="hero in allHeroes | orderBy:'name'">
+    <a href="#/hero/{{hero._id}}">{{hero.name}}</a> - the {{hero.subtitle}}
+  </li>
+</ul>
