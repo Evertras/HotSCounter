@@ -6,8 +6,8 @@ module.exports = function(grunt) {
 				banner: '/*! <%= pkg.name %> <%= grunt.template.today("yyyy-mm-dd") %> */\n'
 			},
 			build: {
-				src: 'src/<%= pkg.name %>.js',
-				dest: 'build/<%= pkg.name %>.min.js'
+				src: 'src/concat.js',
+				dest: 'public/js/hotscounter.js'
 			}
 		},
 		jshint: {
@@ -24,12 +24,21 @@ module.exports = function(grunt) {
 			all: {
 				src: ['app/test/**/*.js']
 			}
+		},
+		concat: {
+			options: {
+			},
+			dist: {
+				src: ['src/**/*.js'],
+				dest: 'src/concat.js'
+			}
 		}
 	});
 
 	grunt.loadNpmTasks('grunt-contrib-uglify');
 	grunt.loadNpmTasks('grunt-contrib-jshint');
 	grunt.loadNpmTasks('grunt-simple-mocha');
+	grunt.loadNpmTasks('grunt-contrib-concat');
 
-	grunt.registerTask('default', ['jshint', 'simplemocha', 'uglify']);
+	grunt.registerTask('default', ['jshint', 'simplemocha', 'concat:dist', 'uglify:build']);
 };

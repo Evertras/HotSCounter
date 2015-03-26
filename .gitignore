@@ -1,2 +1,4 @@
 node_modules/
+src/built.js
+public/js/hotscounter.js
 public/libs
