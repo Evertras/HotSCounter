@@ -1,0 +1,10 @@
+{
+	"name": "hots-counter",
+	"main": "server.js",
+	"dependencies": {
+		"express": "latest",
+		"mongoose": "latest",
+		"body-parser": "latest",
+		"method-override": "latest"
+		}
+}
