@@ -1,17 +1,43 @@
 <!doctype html>
-<html lang='en'>
+<html lang='en' ng-app="hotsCounters">
 <head>
 	<meta charset="UTF-8">
 	<title>Works!</title>
 
 	<link rel="stylesheet" href="libs/bootstrap/dist/css/bootstrap.min.css">
 
-	<!-- bower:js -->
-	<!-- endbower -->
+	<script src="libs/angular/angular.min.js"></script>
+	<script src="libs/angular-route/angular-route.min.js"></script>
+	<script src="libs/angular-resource/angular-resource.min.js"></script>
+	<script src="libs/jquery/dist/jquery.min.js"></script>
+	<script src="libs/bootstrap/dist/js/bootstrap.min.js"></script>
 
+	<script src="js/hotscounter.js"></script>
 </head>
 
 <body>
-	We did done a thing yay
+	<div class="containter">
+		<div class="col-md-12">
+			<h1>Heroes of the Storm Counters</h1>
+		</div>
+
+		<div ng-view></div>
+	</div>
+
+	<script>
+		var app = angular.module('hotsCounters', ['ngResource', 'ngRoute', 'heroDataService', 'heroListCtrl', 'heroDetailCtrl']);
+
+		app.config(['$routeProvider', function($routeProvider) {
+				$routeProvider.
+					when('/hero/:heroId', {
+						templateUrl: 'template/hero.html',
+						controller: 'heroDetailCtrl',
+					}).
+					when('/', {
+						templateUrl: 'template/hero-list.html',
+						controller: 'heroListCtrl'
+					});
+				}]);
+	</script>
 </body>
 </html>

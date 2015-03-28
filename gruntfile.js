@@ -6,12 +6,13 @@ module.exports = function(grunt) {
 				banner: '/*! <%= pkg.name %> <%= grunt.template.today("yyyy-mm-dd") %> */\n'
 			},
 			build: {
-				src: 'src/concat.js',
-				dest: 'public/js/hotscounter.js'
+				files: {
+					'public/js/hotscounter.js': ['src/**/*.js']
+				}
 			}
 		},
 		jshint: {
-			all: ['public/js/**/*.js', 'app/**/*.js']
+			all: ['src/**/*.js', 'app/**/*.js']
 		},
 		simplemocha: {
 			options: {
@@ -30,7 +31,7 @@ module.exports = function(grunt) {
 			},
 			dist: {
 				src: ['src/**/*.js'],
-				dest: 'src/concat.js'
+				dest: 'concat.js'
 			}
 		}
 	});

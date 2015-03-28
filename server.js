@@ -9,6 +9,8 @@ var app = express();
 
 var port = process.env.PORT || 8080;
 
+var routes = require('./app/routes')(app);
+
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(methodOverride('X-HTTP-Method-Override'));
