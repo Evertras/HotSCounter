@@ -3,6 +3,7 @@
 
 	app.controller('heroDetailCtrl', ['$scope', 'heroDataService', '$routeParams', function($scope, heroDataService, $routeParams) {
 		$scope.hero = heroDataService.getHeroByID($routeParams.heroId);
+		$scope.counters = heroDataService.getCountersForHero($routeParams.heroId);
 
 		$scope.upvote = function(counter) {
 			heroDataService.upvoteCounter(counter);
