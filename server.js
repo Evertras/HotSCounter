@@ -4,22 +4,39 @@
 var express = require('express');
 var bodyParser = require('body-parser');
 var methodOverride = require('method-override');
+var mongoose = require('mongoose');
+var path = require('path');
 
 var app = express();
 
 var port = process.env.PORT || 8080;
 
 var routes = require('./app/routes')(app);
+var models = require('./app/models')(app);
+var heroInit = require('./app/init/heroInit');
+
+mongoose.connect('mongodb://localhost/hotscomp', function(err) {
+		if (err) { 
+			console.log('DB connection ERROR: ', err);
+		} else {
+			console.log('DB connection success!');
+		}
+});
+
+(new heroInit).initializeHeroes();
 
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(methodOverride('X-HTTP-Method-Override'));
 
-app.use(express.static(__dirname + '/public'));
+app.use('/css', express.static(path.resolve(__dirname, 'public', 'css')));
+app.use('/js', express.static(path.resolve(__dirname, 'public', 'js')));
+app.use('/libs', express.static(path.resolve(__dirname, 'public', 'libs')));
+app.use('/', express.static(path.resolve(__dirname, 'public', 'views')));
 
-app.get('*', function(req, res) {
-	res.sendFile(__dirname + '/public/views/index.html');
-});
+//app.get('*', function(req, res) {
+//	res.sendFile(__dirname + '/public/views/index.html');
+//});
 
 app.listen(port);
 

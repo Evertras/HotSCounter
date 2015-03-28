@@ -1,8 +1,8 @@
 var assert = require('assert');
 var should = require('should');
 
-var counterModel = require('./../models/counter.js');
-var heroModel = require('./../models/hero.js');
+var counterModel = require('./../models/counter.js')();
+var heroModel = require('./../models/hero.js')();
 var mongoose = require('mongoose');
 var Counter = mongoose.model('Counter');
 var Hero = mongoose.model('Hero');
