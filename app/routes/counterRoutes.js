@@ -33,9 +33,6 @@ module.exports = function(app) {
 		var counterModel = mongoose.model('Counter');
 
 		app.log('Adding counter...');
-		app.log(req.headers['X-Forwarded-For']);
-		app.log(req.headers['x-forwarded-for']);
-		app.log(JSON.stringify(req.body));
 
 		if (!req.body) {
 			throw 'Parser error';
@@ -44,6 +41,8 @@ module.exports = function(app) {
 		if (!req.body.details) {
 			throw 'Not enough details';
 		}
+
+		app.log(JSON.stringify(req.body));
 
 		req.body.patch = app.currentPatch;
 		req.body.votes = [];
@@ -72,7 +71,13 @@ module.exports = function(app) {
 		}
 
 		var isUpvote = req.body.isUpvote;
-		var source = req.headers['x-forward-for'] ? req.headers['x-forwarded-for'].split(',')[0] : req.connection.remoteAddress;
+		var source;
+
+		if (req.headers['x-forwarded-for']) {
+			source = req.headers['x-forwarded-for'].split(',')[0];
+		} else {
+			source = req.connectionn.remoteAddress;
+		}
 
 		counterModel.findById(req.params.counterID, function (err, counter) {
 			if (err) throw err;

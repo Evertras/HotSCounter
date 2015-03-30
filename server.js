@@ -44,6 +44,7 @@ function errorHandler(err, req, res, next) {
 app.use(errorHandler);
 
 app.use('/css', express.static(path.resolve(__dirname, 'public', 'css')));
+app.use('/img', express.static(path.resolve(__dirname, 'public', 'img')));
 app.use('/js', express.static(path.resolve(__dirname, 'public', 'js')));
 app.use('/libs', express.static(path.resolve(__dirname, 'public', 'libs')));
 app.use('/', express.static(path.resolve(__dirname, 'public', 'views')));
