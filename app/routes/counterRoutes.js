@@ -34,6 +34,10 @@ module.exports = function(app) {
 		console.log('Adding counter...');
 		console.log(req.body);
 
+		if (!req.body) {
+			throw 'Parser error';
+		}
+
 		if (!req.body.details) {
 			throw 'Not enough details';
 		}

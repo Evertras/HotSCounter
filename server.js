@@ -2,14 +2,16 @@
 
 // modules
 var express = require('express');
-var bodyParser = require('body-parser');
 var methodOverride = require('method-override');
 var mongoose = require('mongoose');
 var path = require('path');
+var bodyParser = require('body-parser');
 
 var app = express();
 
 var port = process.env.PORT || 8080;
+
+app.use(bodyParser.json());
 
 var routes = require('./app/routes')(app);
 var models = require('./app/models')(app);
@@ -25,8 +27,6 @@ mongoose.connect('mongodb://localhost/hotscomp', function(err) {
 
 (new heroInit).initializeHeroes();
 
-app.use(bodyParser.json());
-app.use(bodyParser.urlencoded({ extended: true }));
 app.use(methodOverride('X-HTTP-Method-Override'));
 
 app.use('/css', express.static(path.resolve(__dirname, 'public', 'css')));
