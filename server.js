@@ -28,16 +28,18 @@ var routes = require('./app/routes')(app);
 var models = require('./app/models')(app);
 var heroInit = require('./app/init/heroInit');
 
+app.log('Connecting to ' + config.MONGO_URI);
+
 mongoose.connect(config.MONGO_URI, function(err) {
 	if (err) { 
 		app.log('DB connection ERROR: ', err);
 	} else {
-		app.log('DB connection success!  Using ' + config.MONGO_URI);
+		app.log('DB connection success!');
 	}
 
 	mongoose.connection.on('error', function (err) {
 		app.log('!!!!DB ERROR: ' + err);
-	}
+	});
 });
 
 (new heroInit(app)).initializeHeroes();
