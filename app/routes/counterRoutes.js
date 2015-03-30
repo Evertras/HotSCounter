@@ -64,8 +64,6 @@ module.exports = function(app) {
 		var counterModel = mongoose.model('Counter');
 		var modelQuery = { heroID: req.params.heroID, _id: req.params.counterID };
 
-		console.log(req.body);
-
 		if (!req.body) {
 			throw 'Parser error';
 		}
@@ -89,6 +87,8 @@ module.exports = function(app) {
 			counter.save();
 
 			console.log('Successfully ' + (isUpvote ? 'upvoted' : 'downvoted') + ': ' + counter.details);
+
+			res.end();
 		});
 	});
 };

@@ -26,7 +26,7 @@
 			allHeroes: heroesRaw,
 
 			getHeroByID: function (id) {
-				if (heroesDictionary[id] !== null) {
+				if (heroesDictionary[id]) {
 					return heroesDictionary[id];
 				} else {
 					return Hero.get( { heroID: id } );

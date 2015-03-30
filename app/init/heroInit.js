@@ -18,8 +18,7 @@ var heroInit = function () {
 		var hero;
 		var heroModel = mongoose.model('Hero');
 
-		for (i = 0; i < allHeroes.length; ++i)
-		{
+		for (i = 0; i < allHeroes.length; ++i) {
 			hero = allHeroes[i];
 
 			heroModel.findOneAndUpdate( { name: hero.name }, hero, { upsert: true }, updateHeroCallback);
@@ -52,10 +51,106 @@ var heroInit = function () {
 		isRanged: false
 	};
 
+	var azmodan = {
+		name: "Azmodan",
+		type: specialist,
+		subtitle: "Lord of Sin",
+		isRanged: true
+	};
+
+	var brightwing = {
+		name: "Brightwing",
+		type: specialist,
+		subtitle: "Faerie Dragon",
+		isRanged: true
+	};
+
+	var chen = {
+		name: "Chen",
+		type: warrior,
+		subtitle: "Legendary Brewmaster",
+		isRanged: false
+	};
+
+	var diablo = {
+		name: "Diablo",
+		type: warrior,
+		subtitle: "Lord of Terror",
+		isRanged: false
+	};
+
+	var etc = {
+		name: "E.T.C.",
+		type: warrior,
+		subtitle: "Rock God",
+		isRanged: false
+	};
+
+	var falstad = {
+		name: "Falstad",
+		type: assassin,
+		subtitle: "Wildhammer Thane",
+		isRanged: true
+	};
+
+	var gazlowe = {
+		name: "Gazlowe",
+		type: specialist,
+		subtitle: 'Boss of Ratchet',
+		isRanged: false
+	};
+
+	var illidan = {
+		name: "Illidan",
+		type: assassin,
+		subtitle: "Betrayer",
+		isRanged: false
+	};
+
+	var jaina = {
+		name: "Jaina",
+		type: assassin,
+		subtitle: "Archmage of Kirin Tor",
+		isRanged: true
+	};
+
+	var kerrigan = {
+		name: "Kerrigan",
+		type: assassin,
+		subtitle: "Queen of Blades",
+		isRanged: false
+	};
+
+	var lili = {
+		name: "Li Li",
+		type: support,
+		subtitle: "World Wanderer",
+		isRanged: true
+	};
+
+	var malfurion = {
+		name: "Malfurion",
+		type: support,
+		subtitle: "Archdruid",
+		isRanged: true
+	};
+
 	var allHeroes = [
 		abathur,
 		anubarak,
-		arthas
+		arthas,
+		azmodan,
+		brightwing,
+		chen,
+		diablo,
+		etc,
+		falstad,
+		gazlowe,
+		illidan,
+		jaina,
+		kerrigan,
+		lili,
+		malfurion
 	];
 };
 

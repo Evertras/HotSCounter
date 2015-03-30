@@ -9,9 +9,12 @@ var bodyParser = require('body-parser');
 
 var app = express();
 
+app.currentPatch = "Sylvanas";
+
 var port = process.env.PORT || 8080;
 
 app.use(bodyParser.json());
+app.use(methodOverride('X-HTTP-Method-Override'));
 
 var routes = require('./app/routes')(app);
 var models = require('./app/models')(app);
@@ -27,7 +30,12 @@ mongoose.connect('mongodb://localhost/hotscomp', function(err) {
 
 (new heroInit).initializeHeroes();
 
-app.use(methodOverride('X-HTTP-Method-Override'));
+function errorHandler(err, req, res, next) {
+	res.status(500);
+	res.render('error', { error: err } );
+}
+
+app.use(errorHandler);
 
 app.use('/css', express.static(path.resolve(__dirname, 'public', 'css')));
 app.use('/js', express.static(path.resolve(__dirname, 'public', 'js')));
