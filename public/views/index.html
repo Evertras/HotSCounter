@@ -21,12 +21,33 @@
 		<div class="col-md-12">
 			<h1 class="text-center">Heroes of the Storm Counters</h1>
 
+			<div ng-controller="navCtrl">
+				<ul class="nav nav-pills">
+					<li ng-class="isActiveLocation('hero')"><a href="#/">Heroes</a></li>
+					<li ng-class="isActiveLocation('about')"><a href="#/about">About/Help</a></li>
+				</ul>
+			</div>
+
 			<div ng-view></div>
 		</div>
 	</div>
 
 	<script>
 		var app = angular.module('hotsCounters', ['ngRoute', 'heroListCtrl', 'heroDetailCtrl', 'tipList']);
+
+		app.controller('navCtrl', ['$scope', '$location', function($scope, $location) {
+				$scope.isActiveLocation = function(page) {
+					var current = $location.path().substring(1);
+
+					console.log(current);
+
+					if (page === 'hero') {
+						return (current === '' || current.indexOf('hero') === 0) ? "active" : 0;
+					}
+
+					return page === current ? "active" : "";
+					};
+				}]);
 
 		app.config(['$routeProvider', function($routeProvider) {
 				$routeProvider.
@@ -37,6 +58,9 @@
 					when('/', {
 						templateUrl: 'template/hero-list.html',
 						controller: 'heroListCtrl'
+					}).
+					when('/about', {
+						templateUrl: 'template/about.html',
 					});
 				}]);
 	</script>
