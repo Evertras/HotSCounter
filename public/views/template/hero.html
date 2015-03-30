@@ -1,7 +1,14 @@
 <div><a href="#/">Back to hero list</a></div>
 <div class="container">
-	<img src="{{hero.imgUrl}}" />
-    <h2>{{hero.name}}, the {{hero.subtitle}}</h2>
+	<div class="media">
+		<div class="media-left media-middle">
+			<img class="media-object" src="{{hero.imgUrl}}">
+		</div>
+		<div class="media-body">
+			<h2 class="media-heading">{{hero.name}}</h2>
+			<h3><small><em>the {{hero.subtitle}}</em></small></h3>
+		</div>
+	</div>
     
         <div class="col-md-6">
             <h4>Countering {{hero.name}}</h4>
