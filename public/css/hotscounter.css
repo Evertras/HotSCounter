@@ -2,3 +2,8 @@
 	color: #bbb;
 	font-size: 70%;
 }
+
+.smallerPortrait {
+	width: 48px;
+	height: 48px;
+}
