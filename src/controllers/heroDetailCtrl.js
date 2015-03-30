@@ -13,6 +13,15 @@
 			heroDataService.downvoteCounter(counter);
 		};
 
+		$scope.voteTotal = function(counter) {
+			return counter.votes.map(function(vote) {
+				return vote.isUpvote ? 1 : -1;
+			}).
+			reduce(function(prev, cur) {
+				return prev + cur;
+			}, 0);
+		};
+
 		$scope.addCounter = function() {
 			heroDataService.addCounter($scope.hero._id, $scope.counterText, 'Counter', $scope.counters);
 

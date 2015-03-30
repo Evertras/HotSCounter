@@ -1,15 +1,17 @@
 {
   "name": "hots-counter",
   "main": "server.js",
+  "private": true,
   "dependencies": {
     "body-parser": "latest",
     "express": "latest",
     "method-override": "latest",
     "mocha": "^2.2.1",
-    "mongoose": "^4.0.0",
-    "should": "^5.2.0",
     "mocha-mongoose": "^1.0.4",
-    "mongodb": "^1.4.35"
+    "mongodb": "^1.4.35",
+    "mongoose": "~3.8",
+    "should": "^5.2.0",
+    "underscore": "^1.8.2"
   },
   "devDependencies": {
     "grunt": "^0.4.5",

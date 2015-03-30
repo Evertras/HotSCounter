@@ -38,6 +38,7 @@ describe('Counter Model', function() {
 		    	details: "A counter of some sort",
 		    	heroID: sampleHero._id
 		});
+		console.log(counter);
 
 		counter.save(done);
 	});
@@ -54,7 +55,7 @@ describe('Counter Model', function() {
 
 		counter.save(function(err) {
 			should.exist(err);
-			(err).should.have.property('message', 'Counter validation failed');
+			(err).should.have.property('message', 'Validation failed');
 			done();
 		});
 	});

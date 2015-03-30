@@ -35,7 +35,7 @@ describe('Hero', function() {
 		});
 
 		hero.save(function(err) {
-			(err).should.have.property('message', 'Hero validation failed');
+			(err).should.have.property('message', 'Validation failed');
 			done();
 		});
 	});

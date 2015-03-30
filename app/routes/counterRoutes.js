@@ -1,5 +1,6 @@
 
 var mongoose = require('mongoose');
+var _ = require('underscore');
 
 module.exports = function(app) {
 	console.log('Counter routes loaded');
@@ -56,6 +57,38 @@ module.exports = function(app) {
 			if (err) throw err;
 
 			res.json(post);
+		});
+	});
+
+	app.post('/api/hero/:heroID/counter/:counterID', function (req, res) {
+		var counterModel = mongoose.model('Counter');
+		var modelQuery = { heroID: req.params.heroID, _id: req.params.counterID };
+
+		console.log(req.body);
+
+		if (!req.body) {
+			throw 'Parser error';
+		}
+
+		var isUpvote = req.body.isUpvote;
+		var source = req.header['x-forward-for'] ? req.header['x-forwarded-for'].split(',')[0] : req.connection.remoteAddress;
+
+		counterModel.findById(req.params.counterID, function (err, counter) {
+			if (err) throw err;
+
+			var existingVote = _.find(counter.votes, function(value, index) { return value.source == source; });
+
+
+			if (existingVote) {
+				existingVote.isUpvote = isUpvote;
+				existingVote.patch = app.currentPatch;
+			} else {
+				counter.votes.push( { isUpvote: isUpvote, source: source, patch: app.currentPatch } );
+			}
+
+			counter.save();
+
+			console.log('Successfully ' + (isUpvote ? 'upvoted' : 'downvoted') + ': ' + counter.details);
 		});
 	});
 };
