@@ -1,5 +1,16 @@
 <div class="container">
-	<div ng-repeat="hero in allHeroes | orderBy:'name'" class="col-md-4">
-		<a href="#/hero/{{hero._id}}">{{hero.name}}</a> - the {{hero.subtitle}}
-	</div>
+	<table class="table col-md-6">
+		<tr ng-repeat="hero in allHeroes | orderBy:'name'">
+			<td>
+				<div class="media">
+					<div class="media-left">
+						<a href="#/hero/{{hero._id}}"><img class="media-object" src="{{hero.imgUrl}}"></a>
+					</div>
+					<div class="media-body">
+						<h2><a href="#/hero/{{hero._id}}">{{hero.name}}</a> <small>the {{hero.subtitle}}</small></h2>
+					</div>
+				</div>
+			</td>
+		</tr>
+	</table>
 </div>
