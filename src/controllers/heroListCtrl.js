@@ -8,14 +8,11 @@
 
 		$scope.$watch(function(scope) { return scope.allHeroes.length; },
 			function() {
-				console.log("Updating chunks...");
 				$scope.allHeroChunks = [];
 
 				var chunks = 3;
 
-				var split = Math.floor($scope.allHeroes.length / 3);
-
-				console.log("Split is " + split);
+				var split = Math.ceil($scope.allHeroes.length / 3);
 
 				if (split > 1) {
 					var sortedHeroes = _.sortBy($scope.allHeroes, 'name');
