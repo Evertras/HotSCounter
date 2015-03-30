@@ -39,8 +39,6 @@
 				$scope.isActiveLocation = function(page) {
 					var current = $location.path().substring(1);
 
-					console.log(current);
-
 					if (page === 'hero') {
 						return (current === '' || current.indexOf('hero') === 0) ? "active" : 0;
 					}
