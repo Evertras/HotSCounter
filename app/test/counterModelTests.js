@@ -70,7 +70,7 @@ describe('Counter Model', function() {
 		    	heroID: sampleHero._id
 		});
 
-		var maxChars = 512;
+		var maxChars = 1024;
 		
 		for (var i = 0; i < maxChars + 1; ++i)
 		{

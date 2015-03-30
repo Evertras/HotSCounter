@@ -15,6 +15,6 @@ module.exports = function() {
 		}, 'Invalid type');
 
 	model.schema.path('details').validate(function (details) {
-			return details.length < 512;
+			return details.length < 1024;
 		}, 'Details too long');
 };

@@ -1,5 +1,5 @@
 <table class="table">
-	<tr ng-repeat="tip in tips | filter: { type: type }" ng-show="voteTotal(tip) > -10">
+	<tr ng-repeat="tip in tips | filter: { type: type } | orderBy:voteTotal:true" ng-show="voteTotal(tip) > -10">
 		<td>
 			<strong>{{ voteTotal(tip) }}</strong>
 			<div class="btn-group-vertical">

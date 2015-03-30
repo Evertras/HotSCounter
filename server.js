@@ -1,6 +1,6 @@
 // server.js
 
-var config = require('./app/config.json')[process.env.NODE_ENV || 'dev'];
+var config = require('./app/config.json')[process.env.NODE_ENV || 'prod'];
 
 // modules
 var express = require('express');
@@ -32,7 +32,7 @@ mongoose.connect(config.MONGO_URI, function(err) {
 	if (err) { 
 		app.log('DB connection ERROR: ', err);
 	} else {
-		app.log('DB connection success!');
+		app.log('DB connection success!  Using ' + config.MONGO_URI);
 	}
 });
 
