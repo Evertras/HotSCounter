@@ -2,7 +2,9 @@
 
 echo "Stopping..."
 sudo stop hots-counter
-echo "Stopped... running grunt..."
+echo "Stopped... updating from git..."
+git pull https://github.com/Evertras/Hotscounter.git
+echo "Git pull success... running grunt..."
 grunt
 echo "Grunt completed... starting..."
 sudo start hots-counter
