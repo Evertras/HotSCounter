@@ -21,6 +21,8 @@ var heroInit = function (app) {
 		for (i = 0; i < allHeroes.length; ++i) {
 			hero = allHeroes[i];
 
+			hero.imgUrl = 'img/' + hero.name.replace(/ /g, '').replace(/'/g, '') + '.png';
+
 			heroModel.findOneAndUpdate( { name: hero.name }, hero, { upsert: true }, updateHeroCallback);
 		}
 	};
@@ -34,14 +36,14 @@ var heroInit = function (app) {
 		name: "Abathur",
 		type: specialist,
 		subtitle: "Evolution Master",
-		isRanged: false
+		isRanged: false,
 	};
 
 	var anubarak = {
 		name: "Anub'arak",
 		type: warrior,
 		subtitle: "Traitor King",
-		isRanged: false
+		isRanged: false,
 	};
 
 	var arthas = {

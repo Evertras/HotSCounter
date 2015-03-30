@@ -5,7 +5,8 @@ module.exports = function() {
 		name: String,
 		subtitle: String,
 		type: String,
-		isRanged: Boolean
+		isRanged: Boolean,
+		imgUrl: String
 		}).
 		schema.path('type').validate(function (value) {
 			return /Warrior|Support|Assassin|Specialist/.test(value);

@@ -1,5 +1,6 @@
 <div><a href="#/">Back to hero list</a></div>
 <div class="container">
+	<img src="{{hero.imgUrl}}" />
     <h2>{{hero.name}}, the {{hero.subtitle}}</h2>
     
         <div class="col-md-6">
@@ -7,9 +8,11 @@
             <table class="table">
                 <tr ng-repeat="counter in counters | filter: { type: 'Counter' } | orderBy:voteTotal:true">
                     <td>
-                        <button class="btn btn-success btn-xs" ng-click="upvote(counter)"><span class="glyphicon glyphicon-chevron-up"></span></button>
                         <strong>{{ voteTotal(counter) }}</strong>
-                        <button class="btn btn-danger btn-xs" ng-click="downvote(counter)"><span class="glyphicon glyphicon-chevron-down"></span></button>
+			<div class="btn-group-vertical">
+                        	<button class="btn btn-success btn-xs" ng-click="upvote(counter)"><span class="glyphicon glyphicon-chevron-up"></span></button>
+                        	<button class="btn btn-danger btn-xs" ng-click="downvote(counter)"><span class="glyphicon glyphicon-chevron-down"></span></button>
+			</div>
                     </td>
                     <td>
                         {{counter.details}}
@@ -32,9 +35,11 @@
            <table class="table">
 	                <tr ng-repeat="counter in counters | filter: { type: 'Helper'} | orderBy:voteTotal:true">
 	                    <td>
-	                        <button class="btn btn-success btn-xs" ng-click="upvote(counter)"><span class="glyphicon glyphicon-chevron-up"></span></button>
 	                        <strong>{{ voteTotal(counter) }}</strong>
-	                        <button class="btn btn-danger btn-xs" ng-click="downvote(counter)"><span class="glyphicon glyphicon-chevron-down"></span></button>
+				<div class="btn-group-vertical">
+	                        	<button class="btn btn-success btn-xs" ng-click="upvote(counter)"><span class="glyphicon glyphicon-chevron-up"></span></button>
+	                        	<button class="btn btn-danger btn-xs" ng-click="downvote(counter)"><span class="glyphicon glyphicon-chevron-down"></span></button>
+				</div>
 	                    </td>
 	                    <td>
 	                        {{counter.details}}
