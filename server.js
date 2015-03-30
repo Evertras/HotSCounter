@@ -1,5 +1,7 @@
 // server.js
 
+var config = require('./app/config.json')[process.env.NODE_ENV || 'dev'];
+
 // modules
 var express = require('express');
 var methodOverride = require('method-override');
@@ -26,19 +28,20 @@ var routes = require('./app/routes')(app);
 var models = require('./app/models')(app);
 var heroInit = require('./app/init/heroInit');
 
-mongoose.connect('mongodb://localhost/hotscomp', function(err) {
-		if (err) { 
-			app.log('DB connection ERROR: ', err);
-		} else {
-			app.log('DB connection success!');
-		}
+mongoose.connect(config.MONGO_URI, function(err) {
+	if (err) { 
+		app.log('DB connection ERROR: ', err);
+	} else {
+		app.log('DB connection success!');
+	}
 });
 
 (new heroInit(app)).initializeHeroes();
 
 function errorHandler(err, req, res, next) {
-	res.status(500);
-	res.render('error', { error: err } );
+	app.log("UNHANDLED ERROR: " + err);
+
+	res.status(500).send({ error: err });
 }
 
 app.use(errorHandler);

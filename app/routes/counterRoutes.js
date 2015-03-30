@@ -11,7 +11,10 @@ module.exports = function(app) {
 		app.log('Getting counters for hero with ID: ' + req.params.id);
 
 		counterModel.find({ heroID: req.params.id }, function(err, counters) {
-			if (err) throw err;
+			if (err) {
+			       app.log("ERROR: " + err);
+			       res.status(500).send(err);
+			}
 
 			res.json(counters);
 		});
@@ -23,7 +26,10 @@ module.exports = function(app) {
 		app.log('Getting specific counter with ID: ' + req.params.counterID);
 
 		counterModel.findById(req.params.counterID, function (err, counter) {
-			if (err) throw err;
+			if (err) {
+			       app.log("ERROR: " + err);
+			       res.status(500).send(err);
+			}
 
 			res.json(counter);
 		});
@@ -56,7 +62,10 @@ module.exports = function(app) {
 		}
 
 		counterModel.create(req.body, function (err, post) {
-			if (err) throw err;
+			if (err) {
+				app.log("ERROR: " + err);
+				res.status(500).send(err);
+			}
 
 			res.json(post);
 		});
@@ -65,6 +74,8 @@ module.exports = function(app) {
 	app.post('/api/hero/:heroID/counter/:counterID', function (req, res) {
 		var counterModel = mongoose.model('Counter');
 		var modelQuery = { heroID: req.params.heroID, _id: req.params.counterID };
+
+		app.log("Voting...");
 
 		if (!req.body) {
 			throw 'Parser error';
@@ -76,11 +87,14 @@ module.exports = function(app) {
 		if (req.headers['x-forwarded-for']) {
 			source = req.headers['x-forwarded-for'].split(',')[0];
 		} else {
-			source = req.connectionn.remoteAddress;
+			source = req.connection.remoteAddress;
 		}
 
 		counterModel.findById(req.params.counterID, function (err, counter) {
-			if (err) throw err;
+			if (err) {
+				app.log("ERROR: " + err);
+				res.status(500).send(err);
+			}
 
 			var existingVote = _.find(counter.votes, function(value, index) { return value.source == source; });
 

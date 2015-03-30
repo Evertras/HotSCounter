@@ -1,0 +1,9 @@
+{
+	"dev": {
+		"MONGO_URI": "mongodb://localhost/hotscomp_dev"
+	},
+
+	"prod": {
+		"MONGO_URI": "mongodb://localhost/hotscomp"
+	}
+}

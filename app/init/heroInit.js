@@ -238,7 +238,7 @@ var heroInit = function (app) {
 	var tyrael = {
 		name: "Tyrael",
 		type: warrior,
-		subtitle: "Archangel of Justic",
+		subtitle: "Archangel of Justice",
 		isRanged: false
 	};
 
