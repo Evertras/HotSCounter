@@ -1,0 +1,9 @@
+#!/bin/bash
+
+echo "Stopping..."
+sudo stop hots-counter
+echo "Stopped... running grunt..."
+grunt
+echo "Grunt completed... starting..."
+sudo start hots-counter
+echo "Changes successfully deployed"
