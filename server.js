@@ -16,19 +16,25 @@ var port = process.env.PORT || 8080;
 app.use(bodyParser.json());
 app.use(methodOverride('X-HTTP-Method-Override'));
 
+app.log = function(msg) {
+	var prefix = '[' + (new Date()).toISOString() + '] - ';
+
+	console.log(prefix + msg);
+};
+
 var routes = require('./app/routes')(app);
 var models = require('./app/models')(app);
 var heroInit = require('./app/init/heroInit');
 
 mongoose.connect('mongodb://localhost/hotscomp', function(err) {
 		if (err) { 
-			console.log('DB connection ERROR: ', err);
+			app.log('DB connection ERROR: ', err);
 		} else {
-			console.log('DB connection success!');
+			app.log('DB connection success!');
 		}
 });
 
-(new heroInit).initializeHeroes();
+(new heroInit(app)).initializeHeroes();
 
 function errorHandler(err, req, res, next) {
 	res.status(500);
@@ -48,4 +54,4 @@ app.use('/', express.static(path.resolve(__dirname, 'public', 'views')));
 
 app.listen(port);
 
-console.log('Listening on ' + port);
+app.log('Listening on ' + port);

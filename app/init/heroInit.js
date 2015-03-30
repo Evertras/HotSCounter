@@ -1,17 +1,17 @@
 var mongoose = require('mongoose');
 
-function updateHeroCallback(err, foundHero) {
-	if (err) { return console.error(err); }
-
-	if (foundHero) {
-		console.log('Updated hero: ' + foundHero.name);
-	} else {
-		console.log('Initialized hero for first time...');
-	}
-}
-
-var heroInit = function () {
+var heroInit = function (app) {
 	var self = this;
+
+	function updateHeroCallback(err, foundHero) {
+		if (err) { return console.error(err); }
+	
+		if (foundHero) {
+			app.log('Updated hero: ' + foundHero.name);
+		} else {
+			app.log('Initialized hero for first time...');
+		}
+	}
 
 	self.initializeHeroes = function() {
 		var i = 0;
@@ -135,6 +135,147 @@ var heroInit = function () {
 		isRanged: true
 	};
 
+	var muradin = {
+		name: "Muradin",
+		type: warrior,
+		subtitle: "Mountain King",
+		isRanged: false
+	};
+
+	var murky = {
+		name: "Murky",
+		type: specialist,
+		subtitle: "Baby Murloc",
+		isRanged: false
+	};
+
+	var nazeebo = {
+		name: "Nazeebo",
+		type: specialist,
+		subtitle: "Umbaru Heretic",
+		isRanged: true
+	};
+
+	var nova = {
+		name: "Nova",
+		type: assassin,
+		subtitle: "Dominion Ghost",
+		isRanged: true
+	};
+
+	var raynor = {
+		name: "Raynor",
+		type: assassin,
+		subtitle: "Renegade Commander",
+		isRanged: true
+	};
+
+	var rehgar = {
+		name: "Rehgar",
+		type: support,
+		subtitle: "Shaman of the Earthen Ring",
+		isRanged: false
+	};
+
+	var hammer = {
+		name: "Sgt. Hammer",
+		type: specialist,
+		subtitle: "Siege Tank Operator",
+		isRanged: true
+	};
+
+	var sonya = {
+		name: "Sonya",
+		type: warrior,
+		subtitle: "Wanderer of the North",
+		isRanged: false
+	};
+
+	var stitches = {
+		name: "Stitches",
+		type: warrior,
+		subtitle: "Terror of Darkshire",
+		isRanged: false
+	};
+
+	var sylvanas = {
+		name: "Sylvanas",
+		type: specialist,
+		subtitle: "Banshee Queen",
+		isRanged: true
+	};
+
+	var tassadar = {
+		name: "Tassadar",
+		type: support,
+		subtitle: "Savior of the Templar",
+		isRanged: true
+	};
+
+	var lostvikings = {
+		name: "The Lost Vikings",
+		type: specialist,
+		subtitle: "Triple Trouble",
+		isRanged: false
+	};
+
+	var thrall = {
+		name: "Thrall",
+		type: assassin,
+		subtitle: "Warchief of the Horde",
+		isRanged: false
+	};
+
+	var tychus = {
+		name: "Tychus",
+		type: assassin,
+		subtitle: "Notorious Outlaw",
+		isRanged: true
+	};
+
+	var tyrael = {
+		name: "Tyrael",
+		type: warrior,
+		subtitle: "Archangel of Justic",
+		isRanged: false
+	};
+
+	var tyrande = {
+		name: "Tyrande",
+		type: support,
+		subtitle: "High Priestess of Elune",
+		isRanged: true
+	};
+
+	var uther = {
+		name: "Uther",
+		type: support,
+		subtitle: "Lightbringer",
+		isRanged: false
+	};
+
+	var valla = {
+		name: "Valla",
+		type: assassin,
+		subtitle: "Vengeance Incarnate",
+		isRanged: true
+	};
+
+	var zagara = {
+		name: "Zagara",
+		type: specialist,
+		subtitle: "Broodmother of the Swarm",
+		isRanged: true
+	};
+
+	var zeratul = {
+		name: "Zeratul",
+		type: assassin,
+		subtitle: "Dark Prelate",
+		isRanged: false
+	};
+
+
 	var allHeroes = [
 		abathur,
 		anubarak,
@@ -150,7 +291,27 @@ var heroInit = function () {
 		jaina,
 		kerrigan,
 		lili,
-		malfurion
+		malfurion,
+		muradin,
+		murky,
+		nazeebo,
+		nova,
+		raynor,
+		rehgar,
+		hammer,
+		sonya,
+		stitches,
+		sylvanas,
+		tassadar,
+		lostvikings,
+		thrall,
+		tychus,
+		tyrael,
+		tyrande,
+		uther,
+		valla,
+		zagara,
+		zeratul
 	];
 };
 

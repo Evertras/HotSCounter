@@ -3,12 +3,12 @@ var mongoose = require('mongoose');
 var _ = require('underscore');
 
 module.exports = function(app) {
-	console.log('Counter routes loaded');
+	app.log('Counter routes loaded');
 
 	app.get('/api/hero/:id/counter', function (req, res) {
 		var counterModel = mongoose.model('Counter');
 
-		console.log('Getting counters for hero with ID: ' + req.params.id);
+		app.log('Getting counters for hero with ID: ' + req.params.id);
 
 		counterModel.find({ heroID: req.params.id }, function(err, counters) {
 			if (err) throw err;
@@ -20,7 +20,7 @@ module.exports = function(app) {
 	app.get('/api/hero/:heroID/counter/:counterID', function (req, res) {
 		var counterModel = mongoose.model('Counter');
 
-		console.log('Getting specific counter with ID: ' + req.params.counterID);
+		app.log('Getting specific counter with ID: ' + req.params.counterID);
 
 		counterModel.findById(req.params.counterID, function (err, counter) {
 			if (err) throw err;
@@ -32,8 +32,10 @@ module.exports = function(app) {
 	app.post('/api/hero/:heroID/counter/', function (req, res) {
 		var counterModel = mongoose.model('Counter');
 
-		console.log('Adding counter...');
-		console.log(req.body);
+		app.log('Adding counter...');
+		app.log(req.headers['X-Forwarded-For']);
+		app.log(req.headers['x-forwarded-for']);
+		app.log(JSON.stringify(req.body));
 
 		if (!req.body) {
 			throw 'Parser error';
@@ -47,8 +49,9 @@ module.exports = function(app) {
 		req.body.votes = [];
 		req.body.heroID = req.params.heroID;
 
-		if (req.header['x-forwarded-for']) {
-			req.body.source = req.header['x-forwarded-for'].split(',')[0];
+		if (req.headers['x-forwarded-for']) {
+			app.log(req.headers['x-forwarded-for']);
+			req.body.source = req.headers['x-forwarded-for'].split(',')[0];
 		} else {
 			req.body.source = req.connection.remoteAddress;
 		}
@@ -69,7 +72,7 @@ module.exports = function(app) {
 		}
 
 		var isUpvote = req.body.isUpvote;
-		var source = req.header['x-forward-for'] ? req.header['x-forwarded-for'].split(',')[0] : req.connection.remoteAddress;
+		var source = req.headers['x-forward-for'] ? req.headers['x-forwarded-for'].split(',')[0] : req.connection.remoteAddress;
 
 		counterModel.findById(req.params.counterID, function (err, counter) {
 			if (err) throw err;
@@ -86,7 +89,7 @@ module.exports = function(app) {
 
 			counter.save();
 
-			console.log('Successfully ' + (isUpvote ? 'upvoted' : 'downvoted') + ': ' + counter.details);
+			app.log('Successfully ' + (isUpvote ? 'upvoted' : 'downvoted') + ': ' + counter.details);
 
 			res.end();
 		});
