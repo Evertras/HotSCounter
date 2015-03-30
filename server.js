@@ -34,6 +34,10 @@ mongoose.connect(config.MONGO_URI, function(err) {
 	} else {
 		app.log('DB connection success!  Using ' + config.MONGO_URI);
 	}
+
+	mongoose.connection.on('error', function (err) {
+		app.log('!!!!DB ERROR: ' + err);
+	}
 });
 
 (new heroInit(app)).initializeHeroes();
