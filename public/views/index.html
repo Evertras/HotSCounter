@@ -16,7 +16,7 @@
 </head>
 
 <body>
-	<div class="containter">
+	<div class="container">
 		<div class="col-md-12">
 			<h1 class="text-center">Heroes of the Storm Counters</h1>
 
@@ -25,7 +25,7 @@
 	</div>
 
 	<script>
-		var app = angular.module('hotsCounters', ['ngRoute', 'heroListCtrl', 'heroDetailCtrl']);
+		var app = angular.module('hotsCounters', ['ngRoute', 'heroListCtrl', 'heroDetailCtrl', 'tipList']);
 
 		app.config(['$routeProvider', function($routeProvider) {
 				$routeProvider.

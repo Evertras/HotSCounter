@@ -1,5 +1,5 @@
 (function() {
-	var app = angular.module('heroDetailCtrl', ['ngRoute', 'heroDataService']);
+	var app = angular.module('heroDetailCtrl', ['ngRoute', 'heroDataService', 'tipList']);
 
 	app.controller('heroDetailCtrl', ['$scope', 'heroDataService', '$routeParams', function($scope, heroDataService, $routeParams) {
 		$scope.hero = heroDataService.getHeroByID($routeParams.heroId);

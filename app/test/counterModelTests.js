@@ -59,4 +59,27 @@ describe('Counter Model', function() {
 			done();
 		});
 	});
+
+	it('should not save correctly with too-long details', function(done) {
+		var counter = new Counter({
+			patch: "Test Patch",
+		    	source: "0.0.0.0",
+		    	type: "Counter",
+		    	votes: [],
+		    	details: "Repeat ",
+		    	heroID: sampleHero._id
+		});
+
+		var maxChars = 512;
+		
+		for (var i = 0; i < maxChars + 1; ++i)
+		{
+			counter.details += 'x';
+		}
+
+		counter.save(function(err) {
+			should.exist(err);
+			done();
+		});
+	});
 });

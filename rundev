@@ -1,0 +1,3 @@
+#!/bin/bash
+grunt
+PORT=4217 node server.js
