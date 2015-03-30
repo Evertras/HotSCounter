@@ -1,0 +1,23 @@
+<table class="table">
+	<tr ng-repeat="counter in counters | filter: { type: 'Counter' } | orderBy:voteTotal:true">
+		<td>
+			<strong>{{ voteTotal(counter) }}</strong>
+			<div class="btn-group-vertical">
+				<button class="btn btn-success btn-xs" ng-click="upvote(counter)"><span class="glyphicon glyphicon-chevron-up"></span></button>
+				<button class="btn btn-danger btn-xs" ng-click="downvote(counter)"><span class="glyphicon glyphicon-chevron-down"></span></button>
+			</div>
+		</td>
+		<td>
+			{{counter.details}}
+		</td>
+	</tr>
+	<tr>
+		<td>
+		&nbsp;
+		</td>
+		<td>
+		<textarea class="form-control" ng-model="counterText" placeholder="Type your tip and then click Add!"></textarea>
+		<div><button class="btn btn-success btn-xs" ng-click="addCounter()"><span class="glyphicon glyphicon-plus"></span> Add</button></div>
+		</td>
+	</tr>
+</table>
