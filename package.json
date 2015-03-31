@@ -10,15 +10,18 @@
     "mocha-mongoose": "^1.0.4",
     "mongodb": "^1.4.35",
     "mongoose": "~3.8",
+    "protractor": "^2.0.0",
     "should": "^5.2.0",
     "underscore": "^1.8.2"
   },
   "devDependencies": {
+    "chromedriver": "^2.14.1",
     "grunt": "^0.4.5",
     "grunt-contrib-concat": "^0.5.1",
     "grunt-contrib-jshint": "^0.11.1",
     "grunt-contrib-nodeunit": "^0.4.1",
     "grunt-contrib-uglify": "^0.8.0",
-    "grunt-simple-mocha": "^0.4.0"
+    "grunt-simple-mocha": "^0.4.0",
+    "selenium-webdriver": "^2.45.1"
   }
 }

@@ -26,7 +26,10 @@ app.log = function(msg) {
 
 var routes = require('./app/routes')(app);
 var models = require('./app/models')(app);
+
+// Initialization
 var heroInit = require('./app/init/heroInit');
+var mapInit = require('./app/init/mapInit');
 
 app.log('Connecting to ' + config.MONGO_URI);
 
@@ -43,6 +46,7 @@ mongoose.connect(config.MONGO_URI, function(err) {
 });
 
 (new heroInit(app)).initializeHeroes();
+(new mapInit(app)).initializeMaps();
 
 function errorHandler(err, req, res, next) {
 	app.log("UNHANDLED ERROR: " + err);

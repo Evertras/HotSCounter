@@ -21,7 +21,7 @@ var heroInit = function (app) {
 		for (i = 0; i < allHeroes.length; ++i) {
 			hero = allHeroes[i];
 
-			hero.imgUrl = 'img/' + hero.name.replace(/ /g, '').replace(/'/g, '') + '.png';
+			hero.imgUrl = 'img/hero/' + hero.name.replace(/ /g, '').replace(/'/g, '') + '.png';
 
 			heroModel.findOneAndUpdate( { name: hero.name }, hero, { upsert: true }, updateHeroCallback);
 		}

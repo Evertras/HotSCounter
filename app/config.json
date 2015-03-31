@@ -5,5 +5,9 @@
 
 	"prod": {
 		"MONGO_URI": "mongodb://localhost/hotscomp"
+	},
+
+	"protractor": {
+		"MONGO_URI": "mongodb://localhost/hotscomp_protractor"
 	}
 }
