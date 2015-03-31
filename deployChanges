@@ -3,7 +3,7 @@
 echo "Stopping..."
 sudo stop hots-counter
 echo "Stopped... updating from git..."
-git pull
+git pull https://github.com/Evertras/HotsCounter.git
 cd public/
 echo "Running bower install..."
 bower install
