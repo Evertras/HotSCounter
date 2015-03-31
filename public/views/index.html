@@ -49,7 +49,7 @@
 	</div>
 
 	<script>
-		var app = angular.module('hotsCounters', ['ngRoute', 'heroListCtrl', 'heroDetailCtrl', 'tipList', 'mapListCtrl', 'mapDetailCtrl']);
+		var app = angular.module('hotsCounters', ['ngRoute', 'heroListCtrl', 'heroDetailCtrl', 'tipList', 'mapListCtrl', 'mapDetailCtrl', 'utilDataService']);
 
 		app.controller('navCtrl', ['$scope', '$location', '$window', '$rootScope', function($scope, $location, $window, $rootScope) {
 			$scope.isActiveLocation = function(page) {

@@ -1,16 +1,18 @@
 (function() {
-	var app = angular.module('tipListCtrl', ['ngRoute', 'heroDataService']);
+	var app = angular.module('tipListCtrl', ['ngRoute', 'heroDataService', 'mapDataService', 'utilDataService']);
 
 	app.controller('tipListCtrl', [
 					'$scope',
 					'heroDataService',
 					'mapDataService',
+					'utilDataService',
 					'$routeParams',
 					'$location',
-	function($scope, heroDataService, mapDataService, $routeParams, $location) {
+	function($scope, heroDataService, mapDataService, utilDataService, $routeParams, $location) {
 		var type = ($location.path().substring(1).indexOf('map') === 0) ? 'map' : 'hero';
 		var dataService = type === 'map' ? mapDataService : heroDataService;
 		var typeId = type === 'map' ? $routeParams.mapId : $routeParams.heroId;
+		var mySource = utilDataService.mySource;
 
 		$scope.voteTotal = function(tip) {
 			return tip.votes.map(function(vote) {
@@ -27,6 +29,42 @@
 
 		$scope.downvote = function(tip) {
 			dataService.downvoteCounter(tip);
+		};
+
+		$scope.upvoteClass = function(tip) {
+			if (mySource) {
+				var exists = _.find(tip.votes, function(vote) { 
+					return vote.source === mySource.source;
+				});
+
+				if (exists) {
+					if (exists.isUpvote) {
+						return "btn-success";
+					} else {
+						return "";
+					}
+				} else {
+					return "btn-warning";
+				}
+			}
+		};
+
+		$scope.downvoteClass = function(tip) {
+			if (mySource) {
+				var exists = _.find(tip.votes, function(vote) { 
+					return vote.source === mySource.source;
+				});
+
+				if (exists) {
+					if (exists.isUpvote) {
+						return "";
+					} else {
+						return "btn-danger";
+					}
+				} else {
+					return "btn-warning";
+				}
+			}
 		};
 
 		$scope.addTip = function() {

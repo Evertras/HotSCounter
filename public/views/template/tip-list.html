@@ -3,8 +3,8 @@
 		<td>
 			<strong>{{ voteTotal(tip) }}</strong>
 			<div class="btn-group-vertical">
-				<button class="btn btn-success btn-xs" ng-click="upvote(tip)"><span class="glyphicon glyphicon-chevron-up"></span></button>
-				<button class="btn btn-danger btn-xs" ng-click="downvote(tip)"><span class="glyphicon glyphicon-chevron-down"></span></button>
+				<button class="btn btn-xs" ng-class="upvoteClass(tip)" ng-click="upvote(tip)"><span class="glyphicon glyphicon-chevron-up"></span></button>
+				<button class="btn btn-xs" ng-class="downvoteClass(tip)" ng-click="downvote(tip)"><span class="glyphicon glyphicon-chevron-down"></span></button>
 			</div>
 		</td>
 		<td ng-class="{'possibleTroll': voteTotal(tip) < 0}">
