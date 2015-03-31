@@ -8,6 +8,7 @@ var methodOverride = require('method-override');
 var mongoose = require('mongoose');
 var path = require('path');
 var bodyParser = require('body-parser');
+var favicon = require('serve-favicon');
 
 var app = express();
 
@@ -15,6 +16,7 @@ app.currentPatch = "Sylvanas";
 
 var port = process.env.PORT || 8080;
 
+app.use(favicon(path.join(__dirname, 'public', 'img', 'favicon.ico')));
 app.use(bodyParser.json());
 app.use(methodOverride('X-HTTP-Method-Override'));
 
