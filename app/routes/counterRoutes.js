@@ -8,7 +8,7 @@ module.exports = function(app) {
 	app.get('/api/:type/:id/counter', function (req, res) {
 		var counterModel = mongoose.model('Counter');
 
-		app.log('Getting counters for ' + req.params.type + 'with ID: ' + req.params.id);
+		app.log('Getting counters for ' + req.params.type + ' with ID: ' + req.params.id);
 
 		counterModel.find({ heroID: req.params.id }, function(err, counters) {
 			if (err) {
