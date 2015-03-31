@@ -45,7 +45,7 @@
 	</div>
 
 	<script>
-		var app = angular.module('hotsCounters', ['ngRoute', 'heroListCtrl', 'heroDetailCtrl', 'tipList', 'mapListCtrl']);
+		var app = angular.module('hotsCounters', ['ngRoute', 'heroListCtrl', 'heroDetailCtrl', 'tipList', 'mapListCtrl', 'mapDetailCtrl']);
 
 		app.controller('navCtrl', ['$scope', '$location', function($scope, $location) {
 			$scope.isActiveLocation = function(page) {
@@ -53,6 +53,10 @@
 
 				if (page === 'hero') {
 					return (current === '' || current.indexOf('hero') === 0) ? "active" : 0;
+				}
+
+				if (page === 'map') {
+					return current.indexOf('map') === 0 ? "active" : 0;
 				}
 
 				return page === current ? "active" : "";
@@ -72,6 +76,10 @@
 				when('/map/', {
 					templateUrl: 'template/map-list.html',
 					controller: 'mapListCtrl'
+				}).
+				when('/map/:mapId', {
+					templateUrl: 'template/map.html',
+					controller: 'mapDetailCtrl'
 				}).
 				when('/about', {
 					templateUrl: 'template/about.html',

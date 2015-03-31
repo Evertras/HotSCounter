@@ -16,8 +16,8 @@
 		});
 
 		function vote(counter, isUpvote) {
-			$http.post('/api/map/' + counter.mapID + '/counter/' + counter._id, { isUpvote: isUpvote }).success(function () {
-				var updatedCounter = Counter.get( { mapID: counter.mapID, id: counter._id }, function() {
+			$http.post('/api/map/' + counter.heroID + '/counter/' + counter._id, { isUpvote: isUpvote }).success(function () {
+				var updatedCounter = Counter.get( { mapID: counter.heroID, id: counter._id }, function() {
 					counter.votes = updatedCounter.votes;
 				});
 			});

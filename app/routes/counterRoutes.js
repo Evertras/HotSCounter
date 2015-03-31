@@ -5,10 +5,10 @@ var _ = require('underscore');
 module.exports = function(app) {
 	app.log('Counter routes loaded');
 
-	app.get('/api/hero/:id/counter', function (req, res) {
+	app.get('/api/:type/:id/counter', function (req, res) {
 		var counterModel = mongoose.model('Counter');
 
-		app.log('Getting counters for hero with ID: ' + req.params.id);
+		app.log('Getting counters for ' + req.params.type + 'with ID: ' + req.params.id);
 
 		counterModel.find({ heroID: req.params.id }, function(err, counters) {
 			if (err) {
@@ -20,7 +20,7 @@ module.exports = function(app) {
 		});
 	});
 
-	app.get('/api/hero/:heroID/counter/:counterID', function (req, res) {
+	app.get('/api/:type/:heroID/counter/:counterID', function (req, res) {
 		var counterModel = mongoose.model('Counter');
 
 		app.log('Getting specific counter with ID: ' + req.params.counterID);
@@ -35,10 +35,10 @@ module.exports = function(app) {
 		});
 	});
 
-	app.post('/api/hero/:heroID/counter/', function (req, res) {
+	app.post('/api/:type/:heroID/counter/', function (req, res) {
 		var counterModel = mongoose.model('Counter');
 
-		app.log('Adding counter...');
+		app.log('Adding ' + req.params.type + ' counter...');
 
 		if (!req.body) {
 			throw 'Parser error';
@@ -71,7 +71,7 @@ module.exports = function(app) {
 		});
 	});
 
-	app.post('/api/hero/:heroID/counter/:counterID', function (req, res) {
+	app.post('/api/:type/:heroID/counter/:counterID', function (req, res) {
 		var counterModel = mongoose.model('Counter');
 		var modelQuery = { heroID: req.params.heroID, _id: req.params.counterID };
 

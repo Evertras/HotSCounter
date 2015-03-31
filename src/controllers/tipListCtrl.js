@@ -1,8 +1,16 @@
 (function() {
 	var app = angular.module('tipListCtrl', ['ngRoute', 'heroDataService']);
 
-	app.controller('tipListCtrl', ['$scope', 'heroDataService', '$routeParams', function($scope, heroDataService, $routeParams) {
-		var self = this;
+	app.controller('tipListCtrl', [
+					'$scope',
+					'heroDataService',
+					'mapDataService',
+					'$routeParams',
+					'$location',
+	function($scope, heroDataService, mapDataService, $routeParams, $location) {
+		var type = ($location.path().substring(1).indexOf('map') === 0) ? 'map' : 'hero';
+		var dataService = type === 'map' ? mapDataService : heroDataService;
+		var typeId = type === 'map' ? $routeParams.mapId : $routeParams.heroId;
 
 		$scope.voteTotal = function(tip) {
 			return tip.votes.map(function(vote) {
@@ -14,31 +22,21 @@
 		};
 
 		$scope.upvote = function(tip) {
-			heroDataService.upvoteCounter(tip);
+			dataService.upvoteCounter(tip);
 		};
 
 		$scope.downvote = function(tip) {
-			heroDataService.downvoteCounter(tip);
+			dataService.downvoteCounter(tip);
 		};
 
 		$scope.addTip = function() {
-			heroDataService.addCounter($routeParams.heroId, $scope.tipText, $scope.type, $scope.tips);
+			if (type === 'hero') {
+				heroDataService.addCounter($routeParams.heroId, $scope.tipText, $scope.type, $scope.tips);
+			} else {
+				mapDataService.addCounter($routeParams.mapId, $scope.tipText, $scope.tips);
+			}
 
 			$scope.tipText = "";
 		};
 	}]);
 })();
-
-/*
-		$scope.addCounter = function() {
-			heroDataService.addCounter($scope.hero._id, $scope.counterText, 'Counter', $scope.counters);
-
-			$scope.counterText = "";
-		};
-
-		$scope.addHelper = function() {
-			heroDataService.addCounter($scope.hero._id, $scope.helperText, 'Helper', $scope.counters);
-
-			$scope.helperText = "";
-		};
-*/
