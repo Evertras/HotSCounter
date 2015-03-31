@@ -26,24 +26,34 @@ module.exports = function(app) {
 			});
 		}
 
-		heroModel.findById(req.params.id, function (err, foundByID) {
-			if (err) {
-				heroModel.findOne({urlName: req.params.id.toLowerCase()}, function (err, foundByName) {
-					if (err) {
-						throw err;
-					}
+		if (req.params.type === 'map') {
+			counterModel.find({ heroID: req.params.id }, function(err, counters) {
+				if (err) {
+					throw err;
+				}
 
-					if (foundByName) {
-						callback(foundByName);
-					} else {
-						throw "ERR: Couldn't find hero with urlName of " + req.params.id.toLowerCase();
-					}
-				});
-			} else {
-				callback(foundByID);
-			}
-		});
+				res.json(counters);
+			});
+		}
+		else {
+			heroModel.findById(req.params.id, function (err, foundByID) {
+				if (err || !foundByID) {
+					heroModel.findOne({urlName: req.params.id.toLowerCase()}, function (err, foundByName) {
+						if (err) {
+							throw err;
+						}
 
+						if (foundByName) {
+							callback(foundByName);
+						} else {
+							throw "ERR: Couldn't find hero with urlName of " + req.params.id.toLowerCase();
+						}
+					});
+				} else {
+					callback(foundByID);
+				}
+			});
+		}
 	});
 
 	app.get('/api/:type/:heroID/counter/:counterID', function (req, res) {
