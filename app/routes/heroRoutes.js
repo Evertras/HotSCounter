@@ -12,15 +12,20 @@ module.exports = function(app) {
 		});
 	});
 
-	app.get('/api/hero/:id', function (req, res) {
+	app.get('/api/hero/:name', function (req, res) {
 		var heroModel = mongoose.model('Hero');
+		var searchName = req.params.name.toLowerCase();
 
-		app.log('Getting specific hero with ID: ' + req.params.id);
+		app.log('Getting specific hero with name: ' + searchName);
 
-		heroModel.findById(req.params.id, function (err, hero) {
+		heroModel.findOne({urlName: searchName}, function (err, hero) {
 			if (err) throw err;
 
-			app.log('Found ' + hero.name);
+			if (hero) {
+				app.log('Found ' + hero.name);
+			} else {
+				app.log("ERR: Couldn't find hero...");
+			}
 
 			res.json(hero);
 		});

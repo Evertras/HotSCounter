@@ -3,6 +3,7 @@ var mongoose = require('mongoose');
 module.exports = function() {
 	mongoose.model('Hero', {
 		name: String,
+		urlName: String,
 		subtitle: String,
 		type: String,
 		isRanged: Boolean,

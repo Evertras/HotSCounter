@@ -2,7 +2,7 @@
 	var app = angular.module('heroDataService', ['ngResource']);
 
 	app.factory('heroDataService', ['$resource', '$http', function($resource, $http) {
-		var Hero = $resource('api/hero/:heroID', { heroID: '@_id' });
+		var Hero = $resource('api/hero/:heroId', { heroId: '@urlName' });
 		var Counter = $resource('api/hero/:heroID/counter/:id',
 			{ heroID: '@heroID', id: '@_id' });
 
@@ -29,7 +29,7 @@
 				if (heroesDictionary[id]) {
 					return heroesDictionary[id];
 				} else {
-					return Hero.get( { heroID: id } );
+					return Hero.get( { heroId: id } );
 				}
 			},
 

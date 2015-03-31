@@ -7,17 +7,43 @@ module.exports = function(app) {
 
 	app.get('/api/:type/:id/counter', function (req, res) {
 		var counterModel = mongoose.model('Counter');
+		var heroModel = mongoose.model('Hero');
+
+		var hero;
 
 		app.log('Getting counters for ' + req.params.type + ' with ID: ' + req.params.id);
 
-		counterModel.find({ heroID: req.params.id }, function(err, counters) {
-			if (err) {
-			       app.log("ERROR: " + err);
-			       res.status(500).send(err);
-			}
+		function callback(hero) {
+			var heroID = hero._id.toString();
 
-			res.json(counters);
+			counterModel.find({ $or: [{ heroID: heroID }, { heroID: hero.urlName }] }, function(err, counters) {
+				if (err) {
+				       app.log("ERROR: " + err);
+				       res.status(500).send(err);
+				}
+
+				res.json(counters);
+			});
+		}
+
+		heroModel.findById(req.params.id, function (err, foundByID) {
+			if (err) {
+				heroModel.findOne({urlName: req.params.id.toLowerCase()}, function (err, foundByName) {
+					if (err) {
+						throw err;
+					}
+
+					if (foundByName) {
+						callback(foundByName);
+					} else {
+						throw "ERR: Couldn't find hero with urlName of " + req.params.id.toLowerCase();
+					}
+				});
+			} else {
+				callback(foundByID);
+			}
 		});
+
 	});
 
 	app.get('/api/:type/:heroID/counter/:counterID', function (req, res) {
