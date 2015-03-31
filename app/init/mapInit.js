@@ -22,12 +22,14 @@ var mapInit = function (app) {
 		for (i = 0; i < allMaps.length; ++i) {
 			map = allMaps[i];
 
+			map.imgUrl = ('/img/map/bg_' + map.name.replace(/[ ]/g, '-').replace(/'/g, '') + '.jpg').toLowerCase();
+
 			mapModel.findOneAndUpdate( { name: map.name }, map, { upsert: true }, updateMapCallback);
 		}
 	};
 
 	var dragonshire = {
-		name: "Dragonshire"
+		name: "Dragon Shire"
 	};
 
 	var cursedHollow = {

@@ -1,0 +1,19 @@
+
+<div class="container">
+	<div class="col-md-4" ng-repeat="mapChunk in allMapChunks">
+		<table class="table">
+			<tr ng-repeat="map in mapChunk">
+				<td>
+					<div class="media">
+						<div class="media-left">
+							<a href="#/map/{{map._id}}"><img class="media-object smallerPortrait" src="{{map.imgUrl}}"></a>
+						</div>
+						<div class="media-body">
+							<h4><a href="#/map/{{map._id}}">{{map.name}}</a></h4>
+						</div>
+					</div>
+				</td>
+			</tr>
+		</table>
+	</div>
+</div>

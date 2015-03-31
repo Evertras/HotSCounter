@@ -35,7 +35,7 @@
 			<div ng-controller="navCtrl">
 				<ul class="nav nav-pills">
 					<li ng-class="isActiveLocation('hero')"><a href="#/">Heroes</a></li>
-					<li ng-class="isActiveLocation('map')"><a href="#/maps">Maps</a></li>
+					<li ng-class="isActiveLocation('map')"><a href="#/map">Maps</a></li>
 					<li ng-class="isActiveLocation('about')"><a href="#/about">About/Help</a></li>
 				</ul>
 			</div>
@@ -45,34 +45,38 @@
 	</div>
 
 	<script>
-		var app = angular.module('hotsCounters', ['ngRoute', 'heroListCtrl', 'heroDetailCtrl', 'tipList']);
+		var app = angular.module('hotsCounters', ['ngRoute', 'heroListCtrl', 'heroDetailCtrl', 'tipList', 'mapListCtrl']);
 
 		app.controller('navCtrl', ['$scope', '$location', function($scope, $location) {
-				$scope.isActiveLocation = function(page) {
-					var current = $location.path().substring(1);
+			$scope.isActiveLocation = function(page) {
+				var current = $location.path().substring(1);
 
-					if (page === 'hero') {
-						return (current === '' || current.indexOf('hero') === 0) ? "active" : 0;
-					}
+				if (page === 'hero') {
+					return (current === '' || current.indexOf('hero') === 0) ? "active" : 0;
+				}
 
-					return page === current ? "active" : "";
-					};
-				}]);
+				return page === current ? "active" : "";
+			};
+		}]);
 
 		app.config(['$routeProvider', function($routeProvider) {
-				$routeProvider.
-					when('/hero/:heroId', {
-						templateUrl: 'template/hero.html',
-						controller: 'heroDetailCtrl',
-					}).
-					when('/', {
-						templateUrl: 'template/hero-list.html',
-						controller: 'heroListCtrl'
-					}).
-					when('/about', {
-						templateUrl: 'template/about.html',
-					});
-				}]);
+			$routeProvider.
+				when('/hero/:heroId', {
+					templateUrl: 'template/hero.html',
+					controller: 'heroDetailCtrl',
+				}).
+				when('/', {
+					templateUrl: 'template/hero-list.html',
+					controller: 'heroListCtrl'
+				}).
+				when('/map/', {
+					templateUrl: 'template/map-list.html',
+					controller: 'mapListCtrl'
+				}).
+				when('/about', {
+					templateUrl: 'template/about.html',
+				});
+		}]);
 	</script>
 </body>
 </html>
