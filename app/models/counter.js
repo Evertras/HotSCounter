@@ -11,7 +11,7 @@ module.exports = function() {
 		});
 
 	model.schema.path('type').validate(function (value) {
-			return /Counter|Helper/.test(value);
+			return /Counter|Helper|As/.test(value);
 		}, 'Invalid type');
 
 	model.schema.path('details').validate(function (details) {
