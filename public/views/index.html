@@ -8,6 +8,7 @@
 	<meta name="description" content="A site to share tips and advice to counter and synergize with Heroes of the Storm heroes and maps">
 
 	<link rel="stylesheet" href="libs/bootstrap/dist/css/bootstrap.min.css">
+	<link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Exo+2|Lato|Roboto">
 	<link rel="stylesheet" href="css/hotscounter.css">
 
 	<script src="libs/angular/angular.min.js"></script>
@@ -33,8 +34,8 @@
 <body>
 	<div class="container">
 		<div class="col-md-12">
-			<h1>Heroes of the Storm Counters</h1>
-			<h2><small>A site to share advice for Heroes of the Storm</small></h2>
+			<div class="mainTitle">HotSCounters</div>
+			<div class="mainSubtitle">A site to share advice for Heroes of the Storm</div>
 
 			<div class="navPanel" ng-controller="navCtrl">
 				<ul class="">
@@ -43,9 +44,9 @@
 					<li ng-class="navClassFor('about')"><a href="#/about">About/Help</a></li>
 				</ul>
 			</div>
-
-			<div ng-view></div>
 		</div>
+
+		<div ng-view></div>
 	</div>
 
 	<script>
