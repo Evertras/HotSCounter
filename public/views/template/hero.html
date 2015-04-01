@@ -1,29 +1,27 @@
 <div class="container">
-	<div class="row">
-		<div class="media col-md-4 col-md-offset-4">
-			<div class="media-left media-middle">
-				<img class="media-object heroPortraitBig" src="{{hero.imgUrl}}">
-			</div>
-			<div class="media-body">
-				<h2 class="media-heading">{{hero.name}}</h2>
-				<h3><small><em>the {{hero.subtitle}}</em></small></h3>
-			</div>
+	<div class="row heroDetailsTitlePanel">
+		<div class="col-md-1">
+			<img class="heroPortraitBig" src="{{hero.imgUrl}}">
+		</div>
+		<div class="col-md-4">
+			<div class="heroDetailsTitle heroNameColor">{{hero.name}}</div>
+			<div class="heroDetailsSubtitle">the {{hero.subtitle}}</div>
 		</div>
 	</div>
 
 	<div class="row">
 		<div class="col-md-4">
-			<h4>Countering {{hero.name}}</h4>
+			<div class="tipListHeader tipListCounterHeader">Countering <span class="heroNameColor">{{hero.name}}</span></div>
 			<hc-tip-list tips="counters" type="Counter" />
 		</div>
 
 		<div class="col-md-4">
-			<h4>Playing with {{hero.name}} on your team</h4>
+			<div class="tipListHeader tipListPlayWithHeader">Playing with <span class="heroNameColor">{{hero.name}}</span> on your team</div>
 			<hc-tip-list tips="counters" type="Helper" />
 		</div>
 
 		<div class="col-md-4">
-			<h4>Playing as {{hero.name}}</h4>
+			<div class="tipListHeader tipListPlayAsHeader">Playing as <span class="heroNameColor">{{hero.name}}</span></div>
 			<hc-tip-list tips="counters" type="As" />
 		</div>
 	</div>

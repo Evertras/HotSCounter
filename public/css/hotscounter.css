@@ -1,3 +1,4 @@
+/* Post modifiers */
 .possibleTroll {
 	color: #bbb;
 	font-size: 70%;
@@ -7,6 +8,7 @@
 	font-size: 125%;
 }
 
+/* Image modifiers */
 .smallerPortrait {
 	width: 48px;
 	height: 48px;
@@ -24,15 +26,55 @@
 }
 
 .heroPortraitBig {
-	width: 75px;
-	height: 75px;
+	width: 85px;
+	height: 85px;
 	border:1px solid #;
 	-webkit-border-radius: 10px;
 	-moz-border-radius: 10px;
 	border-radius: 10px;
 }
 
+/* Text modifiers */
+.heroNameColor {
+	color: #446
+}
+
 .freeWeek {
 	color: #740;
 	font-weight: bold;
+}
+
+.heroDetailsTitle {
+	font-size: 200%;
+	font-weight: bold;
+}
+
+.heroDetailsSubtitle {
+	font-size: 125%;
+	font-style: italic;
+	color:#777;
+	margin-left:5em;
+}
+
+.tipListHeader {
+	font-size: 150%;
+	font-weight: bold;
+}
+
+.tipListCounterHeader {
+	color: #A88;
+}
+
+.tipListPlayWithHeader {
+	color: #8A8;
+}
+
+.tipListPlayAsHeader {
+	color: #AA7;
+}
+
+/* DIV modifiers */
+.heroDetailsTitlePanel {
+	margin-top:2em;
+	margin-bottom:2em;
 }
