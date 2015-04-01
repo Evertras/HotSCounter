@@ -7,7 +7,7 @@
 				<button class="btn btn-xs" ng-class="downvoteClass(tip)" ng-click="downvote(tip)"><span class="glyphicon glyphicon-chevron-down"></span></button>
 			</div>
 		</td>
-		<td ng-class="{'possibleTroll': voteTotal(tip) < 0}">
+		<td ng-class="{'possibleTroll': voteTotal(tip) < 0, 'goodPost': voteTotal(tip) > 9}">
 			{{tip.details}}
 		</td>
 	</tr>
