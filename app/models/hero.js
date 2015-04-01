@@ -7,7 +7,8 @@ module.exports = function() {
 		subtitle: String,
 		type: String,
 		isRanged: Boolean,
-		imgUrl: String
+		imgUrl: String,
+		isFreeWeek: Boolean
 		}).
 		schema.path('type').validate(function (value) {
 			return /Warrior|Support|Assassin|Specialist/.test(value);

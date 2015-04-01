@@ -26,6 +26,10 @@ var heroInit = function (app) {
 			hero.imgUrl = 'img/hero/' + concatName + '.png';
 			hero.urlName = concatName.replace(/\./g, '').toLowerCase();
 
+			if (freeHeroes.indexOf(hero) !== -1) {
+				hero.isFreeWeek = true;
+			}
+
 			heroModel.findOneAndUpdate( { name: hero.name }, hero, { upsert: true }, updateHeroCallback);
 		}
 	};
@@ -61,8 +65,7 @@ var heroInit = function (app) {
 		type: specialist,
 		subtitle: "Lord of Sin",
 		isRanged: true
-	};
-
+	}; 
 	var brightwing = {
 		name: "Brightwing",
 		type: specialist,
@@ -316,6 +319,16 @@ var heroInit = function (app) {
 		uther,
 		valla,
 		zagara,
+		zeratul
+	];
+
+	var freeHeroes = [
+		lili,
+		etc,
+		diablo,
+		tyrande,
+		raynor,
+		gazlowe,
 		zeratul
 	];
 };

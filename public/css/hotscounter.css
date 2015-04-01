@@ -27,3 +27,8 @@
 	-moz-border-radius: 10px;
 	border-radius: 10px;
 }
+
+.freeWeek {
+	color: #740;
+	font-weight: bold;
+}
