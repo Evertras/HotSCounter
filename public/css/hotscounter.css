@@ -60,6 +60,7 @@
 .freeWeek {
 	color: #740;
 	font-weight: bold;
+	font-family: Lato, Helvetica, Arial, Sans-serif;
 }
 
 .heroDetailsTitle {
@@ -73,6 +74,12 @@
 	font-family: Lato, Helvetica, Arial, Sans-serif;
 	color:#777;
 	margin-left:4em;
+}
+
+.listItemLink {
+	font-family: Lato, Helvetica, Arial, Sans-serif;
+	font-weight: bold;
+	color: #446;
 }
 
 .tipListHeader {
@@ -99,10 +106,10 @@
 }
 
 .gradientBanner {
-	background: -webkit-linear-gradient(left, #ccc, #fff);
-	background: -o-linear-gradient(right, #ccc, #fff);
-	background: -moz-linear-gradient(right, #ccc, #fff);
-	background: linear-gradient(to right #ccc, #fff);
+	background: -webkit-linear-gradient(left, #eee, #fff);
+	background: -o-linear-gradient(right, #eee, #fff);
+	background: -moz-linear-gradient(right, #eee, #fff);
+	background: linear-gradient(to right #eee, #fff);
 }
 
 /* NAV */
