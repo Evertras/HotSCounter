@@ -38,16 +38,16 @@
 .mainTitle {
 	margin-top: 0.5em;
 	font-size: 300%;
-	font-family: "Exo 2", Arial, Sans-serif;
+	font-family: "Exo 2", Helvetica Arial, Sans-serif;
 	font-weight: bold;
 }
 
 .mainSubtitle {
 	font-size:175%;
-	font-family: Roboto, Arial, Sans-serif;
+	font-family: Roboto, Helvetica, Arial, Sans-serif;
 	font-weight: bold;
 	color: #888;
-	font-style: italic;
+	/*font-style: italic;*/
 	margin-left:3em;
 	margin-top:-0.5em;
 	margin-bottom:0.5em;
@@ -65,13 +65,14 @@
 .heroDetailsTitle {
 	font-size: 200%;
 	font-weight: bold;
+	font-family: Lato, Helvetica, Arial, Sans-serif;
 }
 
 .heroDetailsSubtitle {
 	font-size: 125%;
-	font-style: italic;
+	font-family: Lato, Helvetica, Arial, Sans-serif;
 	color:#777;
-	margin-left:5em;
+	margin-left:4em;
 }
 
 .tipListHeader {
