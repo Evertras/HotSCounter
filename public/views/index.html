@@ -36,11 +36,11 @@
 			<h1>Heroes of the Storm Counters</h1>
 			<h2><small>A site to share advice for Heroes of the Storm</small></h2>
 
-			<div ng-controller="navCtrl">
-				<ul class="nav nav-pills">
-					<li ng-class="isActiveLocation('hero')"><a href="#/">Heroes</a></li>
-					<li ng-class="isActiveLocation('map')"><a href="#/map">Maps</a></li>
-					<li ng-class="isActiveLocation('about')"><a href="#/about">About/Help</a></li>
+			<div class="navPanel" ng-controller="navCtrl">
+				<ul class="">
+					<li ng-class="navClassFor('hero')"><a href="#/">Heroes</a></li>
+					<li ng-class="navClassFor('map')"><a href="#/map">Maps</a></li>
+					<li ng-class="navClassFor('about')"><a href="#/about">About/Help</a></li>
 				</ul>
 			</div>
 
@@ -52,18 +52,18 @@
 		var app = angular.module('hotsCounters', ['ngRoute', 'heroListCtrl', 'heroDetailCtrl', 'tipList', 'mapListCtrl', 'mapDetailCtrl', 'utilDataService']);
 
 		app.controller('navCtrl', ['$scope', '$location', '$window', '$rootScope', function($scope, $location, $window, $rootScope) {
-			$scope.isActiveLocation = function(page) {
+			$scope.navClassFor = function(page) {
 				var current = $location.path().substring(1);
 
 				if (page === 'hero') {
-					return (current === '' || current.indexOf('hero') === 0) ? "active" : 0;
+					return (current === '' || current.indexOf('hero') === 0) ? "selected" : 0;
 				}
 
 				if (page === 'map') {
-					return current.indexOf('map') === 0 ? "active" : 0;
+					return current.indexOf('map') === 0 ? "selected" : 0;
 				}
 
-				return page === current ? "active" : "";
+				return page === current ? "selected" : "";
 			};
 
 			$rootScope.$on('$viewContentLoaded', function(event) {
