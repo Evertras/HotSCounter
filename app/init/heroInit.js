@@ -28,6 +28,8 @@ var heroInit = function (app) {
 
 			if (freeHeroes.indexOf(hero) !== -1) {
 				hero.isFreeWeek = true;
+			} else {
+				hero.isFreeWeek = false;
 			}
 
 			heroModel.findOneAndUpdate( { name: hero.name }, hero, { upsert: true }, updateHeroCallback);
