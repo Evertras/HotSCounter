@@ -327,7 +327,7 @@ var heroInit = function (app) {
 		etc,
 		diablo,
 		tyrande,
-		raynor,
+		tychus,
 		gazlowe,
 		zeratul
 	];
