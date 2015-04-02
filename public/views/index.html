@@ -32,20 +32,25 @@
 </head>
 
 <body>
-	<div class="container">
-		<div class="col-md-12">
-			<div class="mainTitle">HotSCounters</div>
-			<div class="mainSubtitle">A site to share advice for Heroes of the Storm</div>
-
-			<div class="navPanel" ng-controller="navCtrl">
-				<ul class="">
-					<li ng-class="navClassFor('hero')"><a href="#/">Heroes</a></li>
-					<li ng-class="navClassFor('map')"><a href="#/map">Maps</a></li>
-					<li ng-class="navClassFor('about')"><a href="#/about">About/Help</a></li>
-				</ul>
+	<div class="topBanner">
+		<div class="container">
+			<div class="bannerTitleSection">
+				<div class="mainTitle">HotSCounters</div>
+				<div class="mainSubtitle">A site to share advice for Heroes of the Storm</div>
+			</div>
+			<div class="bannerMenuSection">
+				<div class="navPanel" ng-controller="navCtrl">
+					<ul class="">
+						<li ng-class="navClassFor('hero')"><a href="#/">Heroes</a></li>
+						<li ng-class="navClassFor('map')"><a href="#/map">Maps</a></li>
+						<li ng-class="navClassFor('about')"><a href="#/about">About/Help</a></li>
+					</ul>
+				</div>
 			</div>
 		</div>
+	</div>
 
+	<div class="containter">
 		<div ng-view></div>
 	</div>
 

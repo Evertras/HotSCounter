@@ -40,6 +40,7 @@
 	font-size: 300%;
 	font-family: "Exo 2", Helvetica Arial, Sans-serif;
 	font-weight: bold;
+	color: #fff;
 }
 
 .mainSubtitle {
@@ -115,6 +116,30 @@
 	background: linear-gradient(to right #eee, #fff);
 }
 
+/* Top banner */
+.topBanner {
+	width: 100%;
+	background: #460024;
+	margin-bottom: 5px;
+	height: 140px;
+}
+
+.topBanner > div {
+}
+
+.bannerTitleSection {
+	display: inline-block;
+	height: 140px;
+	float: left;
+}
+
+.bannerMenuSection {
+	display: inline-block;
+	height: 140px;
+	float: right;
+	padding: 40px;
+}
+
 /* NAV */
 .navPanel {
 	display: inline-block;
@@ -123,7 +148,6 @@
 	-webkit-border-radius: 10px;
 	-moz-border-radius: 10px;
 	border-radius: 10px;
-	margin-bottom: 1em;
 	font-family: Roboto, Helvetica, Arial, sans-sarif;
 }
 
@@ -136,9 +160,9 @@
 	display: inline-block;
 	background-color: #333;
 	border:0px solid #999;
-	-webkit border-radius: 0.5em;
-	-moz-border-radius: 0.5em;
-	border-radius: 0.5em;
+	-webkit border-radius: 0.1em;
+	-moz-border-radius: 0.1em;
+	border-radius: 0.1em;
 }
 
 	.navPanel > ul > li.selected {
@@ -156,7 +180,7 @@
 		display: block;
 		padding: 0.5em;
 		color: #fff;
-		font-size:125%;
+		font-size:175%;
 		text-decoration: none;
 	}
 
