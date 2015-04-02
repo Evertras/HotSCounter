@@ -1,0 +1,71 @@
+.hideMobile {
+	display: none;
+}
+
+.mobileOnly {
+	display: inherit;
+}
+
+.mainSubtitle {
+	display: none;
+}
+
+.listItem {
+	font-size:200%;
+}
+
+.listItemLink {
+	font-size:200%;
+}
+
+.listItemLink > small {
+	display: none;
+}
+
+.smallerPortrait {
+	width: 175px;
+	height: 175px;
+}
+
+.backToHeroes {
+	font-size:200%;
+}
+
+.heroDetailsTitle {
+	font-size:500%;
+}
+
+.heroDetailsSubtitle {
+	font-size:250%;
+	margin-left:2em;
+}
+
+.heroPortraitBig {
+	width: 250px;
+	height: 250px;
+}
+
+.tipListHeader {
+	font-size: 250%;
+}
+
+.voteTotal {
+	font-size: 300%;
+	display: block;
+}
+
+.goodTip {
+	font-size: 250%;
+}
+
+.tipDetails {
+	font-size: 200%;
+}
+
+.possibleTroll {
+	font-size: 100%;
+}
+
+textarea.form-control {
+	font-size: 200%;
+}
