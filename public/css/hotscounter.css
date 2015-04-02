@@ -1,3 +1,9 @@
+/* Utility */
+.mobileOnly {
+	display: none;
+}
+
+
 /* Post modifiers */
 .possibleTroll {
 	color: #bbb;
@@ -52,6 +58,14 @@
 	margin-left:3em;
 	margin-top:-0.5em;
 	margin-bottom:0.5em;
+}
+
+.voteTD {
+	width: 75px;
+}
+
+.voteTotal {
+	font-weight: bold;
 }
 
 .heroNameColor {

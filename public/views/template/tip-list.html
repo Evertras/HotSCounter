@@ -1,23 +1,27 @@
 <table class="table">
 	<tr ng-repeat="tip in tips | filter: { type: type } | orderBy:voteTotal:true" ng-show="voteTotal(tip) > -10">
-		<td class="text-center">
-			<div><strong>{{ voteTotal(tip) }}</strong></div>
-			<div class="btn-group-vertical">
-				<button class="btn btn-xs" ng-class="upvoteClass(tip)" ng-click="upvote(tip)"><span class="glyphicon glyphicon-chevron-up"></span></button>
-				<button class="btn btn-xs" ng-class="downvoteClass(tip)" ng-click="downvote(tip)"><span class="glyphicon glyphicon-chevron-down"></span></button>
+		<td class="text-center voteTD">
+			<div class="voteTotal">{{ voteTotal(tip) }}</div>
+			<div class="btn-group-vertical hideMobile">
+				<button class="btn btn-sm" ng-class="upvoteClass(tip)" ng-click="upvote(tip)"><span class="glyphicon glyphicon-chevron-up"></span></button>
+				<button class="btn btn-sm" ng-class="downvoteClass(tip)" ng-click="downvote(tip)"><span class="glyphicon glyphicon-chevron-down"></span></button>
+			</div>
+			<div class="btn-group-vertical mobileOnly">
+				<button class="btn btn-lg" ng-class="upvoteClass(tip)" ng-click="upvote(tip)"><span class="glyphicon glyphicon-chevron-up"></span></button>
+				<button class="btn btn-lg" ng-class="downvoteClass(tip)" ng-click="downvote(tip)"><span class="glyphicon glyphicon-chevron-down"></span></button>
 			</div>
 		</td>
-		<td ng-class="{'possibleTroll': voteTotal(tip) < 0, 'goodPost': voteTotal(tip) > 9}">
+		<td class ="tipDetails" ng-class="{'possibleTroll': voteTotal(tip) < 0, 'goodPost': voteTotal(tip) > 9}">
 			{{tip.details}}
 		</td>
 	</tr>
 	<tr>
-		<td>
-			&nbsp;
-		</td>
-		<td>
+		 <td colspan="2">
 			<textarea class="form-control" ng-model="tipText" placeholder="Type your tip and then click Add! (Maximum 1000 characters)" maxlength="1000"></textarea>
-			<div><button class="btn btn-success btn-xs" ng-click="addTip()"><span class="glyphicon glyphicon-plus"></span> Add</button></div>
+			<div>
+				<button class="btn btn-success btn-xs hideMobile" ng-click="addTip()"><span class="glyphicon glyphicon-plus"></span> Add</button>
+				<button class="btn btn-success btn-lg mobileOnly" ng-click="addTip()"><span class="glyphicon glyphicon-plus"></span> Add</button>
+			</div>
 		</td>
 	</tr>
 </table>
