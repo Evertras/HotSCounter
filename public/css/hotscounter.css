@@ -103,6 +103,10 @@
 	color: #AA7;
 }
 
+.backToHeroes {
+	padding-top: 1em;
+}
+
 /* DIV modifiers */
 .heroDetailsTitlePanel {
 	margin-top:2em;
