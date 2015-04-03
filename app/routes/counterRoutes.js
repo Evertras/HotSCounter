@@ -16,6 +16,21 @@ module.exports = function(app) {
 		});
 	});
 
+	app.get('/api/counter/totalvotes', function (req, res) {
+		var counterModel = mongoose.model('Counter');
+
+		counterModel.find({}, function(err, counters) {
+			if (err) {
+				app.log("ERROR: " + err);
+				res.status(500, send(err));
+			}
+
+			res.json( {
+				total: counters.map(function (counter) { return counter.votes.length; }).reduce(function(prev, res) { return prev + res; }, 0)
+			});
+		});
+	});
+
 	app.get('/api/:type/:id/counter', function (req, res) {
 		var counterModel = mongoose.model('Counter');
 		var heroModel = mongoose.model('Hero');

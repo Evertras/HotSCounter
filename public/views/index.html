@@ -35,31 +35,39 @@
 </head>
 
 <body>
-	<div class="topBanner">
-		<div class="container">
-			<div class="bannerTitleSection linkContainer">
-				<div class="mainTitle">HotSCounters</div>
-				<div class="mainSubtitle">A site to share advice for Heroes of the Storm</div>
-				<a href="#/"><span class="linkSpanner"></span></a>
-			</div>
-			<div class="bannerMenuSection">
-				<div class="navPanel" ng-controller="navCtrl">
-					<ul class="">
-						<li ng-class="navClassFor('hero')"><a href="#/">Heroes</a></li>
-						<li ng-class="navClassFor('map')"><a href="#/map">Maps</a></li>
-						<li ng-class="navClassFor('about')"><a href="#/about">About</a></li>
-					</ul>
+	<div class="mainContent">
+		<div class="topBanner">
+			<div class="container">
+				<div class="bannerTitleSection linkContainer">
+					<div class="mainTitle">HotSCounters</div>
+					<div class="mainSubtitle">A site to share advice for Heroes of the Storm</div>
+					<a href="#/"><span class="linkSpanner"></span></a>
+				</div>
+				<div class="bannerMenuSection">
+					<div class="navPanel" ng-controller="navCtrl">
+						<ul class="">
+							<li ng-class="navClassFor('hero')"><a href="#/">Heroes</a></li>
+							<li ng-class="navClassFor('map')"><a href="#/map">Maps</a></li>
+							<li ng-class="navClassFor('about')"><a href="#/about">About</a></li>
+						</ul>
+					</div>
 				</div>
 			</div>
 		</div>
+
+		<div class="container">
+			<div ng-view autoscroll="true"></div>
+		</div>
+
+		<div class="push"></div>
 	</div>
 
-	<div class="containter">
-		<div ng-view autoscroll="true"></div>
-	</div>
-
-	<footer>
-		<vote-stats />
+	<footer class="hideMobile">
+		<div class="container">
+			<div class="col-md-4 col-md-offset-8">
+				<vote-stats />
+			</div>
+		</div>
 	</footer>
 
 	<script>
