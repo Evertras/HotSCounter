@@ -3,7 +3,18 @@ var mongoose = require('mongoose');
 var _ = require('underscore');
 
 module.exports = function(app) {
-	app.log('Counter routes loaded');
+	app.get('/api/counter/total', function (req, res) {
+		var counterModel = mongoose.model('Counter');
+
+		counterModel.count({}, function(err, c) {
+			if (err) {
+				app.log("ERROR: " + err);
+				res.status(500).send(err);
+			}
+
+			res.json( { total: c } );
+		});
+	});
 
 	app.get('/api/:type/:id/counter', function (req, res) {
 		var counterModel = mongoose.model('Counter');
@@ -149,4 +160,6 @@ module.exports = function(app) {
 			res.end();
 		});
 	});
+
+	app.log('Counter routes loaded');
 };

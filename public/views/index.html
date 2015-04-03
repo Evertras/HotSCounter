@@ -58,8 +58,12 @@
 		<div ng-view autoscroll="true"></div>
 	</div>
 
+	<footer>
+		<vote-stats />
+	</footer>
+
 	<script>
-		var app = angular.module('hotsCounters', ['ngRoute', 'heroListCtrl', 'heroDetailCtrl', 'tipList', 'mapListCtrl', 'mapDetailCtrl', 'utilDataService']);
+		var app = angular.module('hotsCounters', ['ngRoute', 'heroListCtrl', 'heroDetailCtrl', 'tipList', 'mapListCtrl', 'mapDetailCtrl', 'utilDataService', 'voteStats']);
 
 		app.controller('navCtrl', ['$scope', '$location', '$window', '$rootScope', function($scope, $location, $window, $rootScope) {
 			$scope.navClassFor = function(page) {
