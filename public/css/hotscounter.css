@@ -1,3 +1,8 @@
+/* Major bits*/
+body {
+	font-family: Lato, Helvetica, Arial, Sans-serif;
+}
+
 /* Utility */
 .mobileOnly {
 	display: none;
