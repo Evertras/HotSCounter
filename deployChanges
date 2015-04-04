@@ -14,4 +14,4 @@ echo "Running grunt..."
 grunt
 echo "Starting site..."
 sudo start hots-counter
-echo "Changes deployed"
+cowsay "Changes deployed"
