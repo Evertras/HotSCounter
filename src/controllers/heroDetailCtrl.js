@@ -46,7 +46,7 @@
 				$scope.helperText = "";
 			};
 
-			$("#share-buttons a").click(function (button) {
+			$("#share-buttons a").click(function () {
 				var sharedTo = $(this).children('img').attr('alt');
 
 				$window.ga('send', 'event', 'Shared', sharedTo, $scope.hero.name);

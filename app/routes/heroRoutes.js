@@ -7,7 +7,10 @@ module.exports = function(app) {
 		var heroModel = mongoose.model('Hero');
 		app.log('Getting all heroes...');
 		heroModel.find(function(err, heroes) {
-			if (err) throw err;
+			if (err) {
+				throw err;
+			}
+
 			res.json(heroes);
 		});
 	});
@@ -19,7 +22,9 @@ module.exports = function(app) {
 		app.log('Getting specific hero with name: ' + searchName);
 
 		heroModel.findOne({urlName: searchName}, function (err, hero) {
-			if (err) throw err;
+			if (err) {
+				throw err;
+			}
 
 			if (hero) {
 				app.log('Found ' + hero.name);

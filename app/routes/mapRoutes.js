@@ -8,7 +8,10 @@ module.exports = function(app) {
 		var mapModel = mongoose.model('Map');
 		app.log('Getting all maps...');
 		mapModel.find(function(err, maps) {
-			if (err) throw err;
+			if (err) {
+				throw err;
+			}
+
 			res.json(maps);
 		});
 	});
@@ -19,7 +22,9 @@ module.exports = function(app) {
 		app.log('Getting specific map with ID: ' + req.params.id);
 
 		mapModel.findById(req.params.id, function (err, map) {
-			if (err) throw err;
+			if (err) {
+				throw err;
+			}
 
 			app.log('Found ' + map.name);
 

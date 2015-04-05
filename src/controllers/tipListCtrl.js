@@ -9,9 +9,8 @@
 					'$routeParams',
 					'$location',
 	function($scope, heroDataService, mapDataService, utilDataService, $routeParams, $location) {
-		var type = ($location.path().substring(1).indexOf('map') === 0) ? 'map' : 'hero';
+		var type = $location.path().substring(1).indexOf('map') === 0 ? 'map' : 'hero';
 		var dataService = type === 'map' ? mapDataService : heroDataService;
-		var typeId = type === 'map' ? $routeParams.mapId : $routeParams.heroId;
 		var mySource = utilDataService.mySource;
 
 		$scope.voteTotal = function(tip) {

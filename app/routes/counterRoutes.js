@@ -1,6 +1,5 @@
-
 var mongoose = require('mongoose');
-var _ = require('underscore');
+//var _ = require('underscore');
 
 module.exports = function(app) {
 	app.get('/api/counter/total', function (req, res) {
@@ -34,8 +33,6 @@ module.exports = function(app) {
 	app.get('/api/:type/:id/counter', function (req, res) {
 		var counterModel = mongoose.model('Counter');
 		var heroModel = mongoose.model('Hero');
-
-		var hero;
 
 		app.log('Getting counters for ' + req.params.type + ' with ID: ' + req.params.id);
 
@@ -135,7 +132,6 @@ module.exports = function(app) {
 
 	app.post('/api/:type/:heroID/counter/:counterID', function (req, res) {
 		var counterModel = mongoose.model('Counter');
-		var modelQuery = { heroID: req.params.heroID, _id: req.params.counterID };
 
 		app.log("Voting...");
 
@@ -158,7 +154,7 @@ module.exports = function(app) {
 				res.status(500).send(err);
 			}
 
-			var existingVote = _.find(counter.votes, function(value, index) { return value.source == source; });
+			var existingVote = _.find(counter.votes, function(value) { return value.source === source; });
 
 
 			if (existingVote) {
