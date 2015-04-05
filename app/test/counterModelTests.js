@@ -1,4 +1,8 @@
-var assert = require('assert');
+/* global it */
+/* global describe */
+/* global before */
+/* jshint -W098 */
+// var assert = require('assert');
 var should = require('should');
 
 var counterModel = require('./../models/counter.js')();
@@ -8,16 +12,21 @@ var Counter = mongoose.model('Counter');
 var Hero = mongoose.model('Hero');
 
 var dbURI = 'mongodb://localhost/counterModelTests';
-var clearDB = require('mocha-mongoose')(dbURI);
+// var clearDB = require('mocha-mongoose')(dbURI);
 
 var sampleHero;
 
 describe('Counter Model', function() {
 	before(function(done) {
-		if (mongoose.connection.db) return done();
+		if (mongoose.connection.db) {
+			return done();
+		}
 
 		mongoose.connect(dbURI, function(err) {
-			if (err) throw err;
+			if (err) {
+				throw err;
+			}
+
 			sampleHero = new Hero ({
 				name: "Sample Hero",
 				type: "Warrior",
@@ -55,7 +64,7 @@ describe('Counter Model', function() {
 
 		counter.save(function(err) {
 			should.exist(err);
-			(err).should.have.property('message', 'Validation failed');
+			err.should.have.property('message', 'Validation failed');
 			done();
 		});
 	});

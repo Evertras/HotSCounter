@@ -1,16 +1,19 @@
-var assert = require('assert');
-var should = require('should');
-
+/* global describe */
+/* global it */
+/* global beforeEach */
+/* jshint -W098 */
 var heroModel = require('./../models/hero.js');
 var mongoose = require('mongoose');
 var Hero = mongoose.model('Hero');
 
 var dbURI = 'mongodb://localhost/heroModelTests';
-var clearDB = require('mocha-mongoose')(dbURI);
+// var clearDB = require('mocha-mongoose')(dbURI);
 
 describe('Hero', function() {
 	beforeEach(function(done) {
-		if (mongoose.connection.db) return done();
+		if (mongoose.connection.db) {
+			return done();
+		}
 
 		mongoose.connect(dbURI, done);
 	});
@@ -35,7 +38,7 @@ describe('Hero', function() {
 		});
 
 		hero.save(function(err) {
-			(err).should.have.property('message', 'Validation failed');
+			err.should.have.property('message', 'Validation failed');
 			done();
 		});
 	});

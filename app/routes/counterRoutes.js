@@ -21,7 +21,7 @@ module.exports = function(app) {
 		counterModel.find({}, function(err, counters) {
 			if (err) {
 				app.log("ERROR: " + err);
-				res.status(500, send(err));
+				res.status(500).send(err);
 			}
 
 			res.json( {
