@@ -65,14 +65,13 @@ textarea {
 .smallerPortrait {
 	width: 48px;
 	height: 48px;
-	border:1px solid #;
 	-webkit-border-radius: 6px;
 	-moz-border-radius: 6px;
 	border-radius: 6px;
 }
 
 .mapImageBig {
-	border:1px solid #;
+	border:1px solid transparent;
 	-webkit-border-radius: 20px;
 	-moz-border-radius: 20px;
 	border-radius: 20px;
@@ -81,7 +80,6 @@ textarea {
 .heroPortraitBig {
 	width: 85px;
 	height: 85px;
-	border:1px solid #;
 	-webkit-border-radius: 10px;
 	-moz-border-radius: 10px;
 	border-radius: 10px;
@@ -196,8 +194,8 @@ textarea {
 	height: 140px;
 }
 
-.topBanner > div {
-}
+/*.topBanner > div {
+} */
 
 .bannerTitleSection {
 	display: inline-block;
@@ -216,7 +214,7 @@ textarea {
 .navPanel {
 	display: inline-block;
 	/* background-color: #ddd; */
-	border:1px solid #;
+	border:1px solid transparent;
 	-webkit-border-radius: 10px;
 	-moz-border-radius: 10px;
 	border-radius: 10px;
@@ -224,15 +222,15 @@ textarea {
 }
 
 .navPanel > ul {
-	padding: 0px;
+	padding: 0;
 	margin: 0.5em;
 }
 
 .navPanel > ul > li {
 	display: inline-block;
 	background-color: #333;
-	border:0px solid #999;
-	-webkit border-radius: 0.1em;
+	border:0 solid transparent;
+	-webkit-border-radius: 0.1em;
 	-moz-border-radius: 0.1em;
 	border-radius: 0.1em;
 }
