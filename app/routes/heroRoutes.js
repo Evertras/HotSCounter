@@ -18,12 +18,6 @@ module.exports = function(app) {
 
 	app.get('/api/hero/:name', function (req, res, next) {
 		var heroModel = mongoose.model('Hero');
-
-		// From a redirect from heroescounters.com
-		if (req.params.name.toLowerCase() === 'lostvikings') {
-			req.params.name = 'thelostvikings';
-		}
-
 		var searchName = req.params.name.toLowerCase();
 
 		app.log('Getting specific hero with name: ' + searchName);
