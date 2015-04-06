@@ -1,17 +1,34 @@
 #!/bin/bash
-
+ERR = false;
+ERRS = "";
 echo "Stopping..."
 sudo stop hots-counter
 echo "Stopped... updating from git..."
-git pull https://github.com/Evertras/HotsCounter.git
-cd public/
+if git pull https://github.com/Evertras/HotsCounter.git
+then
+	echo "Git pull successful"
+else
+	ERRS += "GIT FAILED!"
+	ERR = true;
+fi
+# cd public/
 # echo "Running npm install..."
 # npm install
 # echo "Running bower install..."
 # bower install
-cd ../
+# cd ../
 echo "Running grunt..."
-grunt
+if grunt
+then
+	echo "Grunt successful"
+else
+	ERRS += "GRUNT FAILED!"
 echo "Starting site..."
 sudo start hots-counter
-cowsay "Changes deployed"
+
+if $ERR
+then
+	cowsay -f dragon $ERRS
+else
+	cowsay "Changes deployed successfully!"
+fi
