@@ -30,7 +30,7 @@ module.exports = function(app) {
 		});
 	});
 
-	app.get('/api/:type/:id/counter', function (req, res) {
+	app.get('/api/:type/:id/counter', function (req, res, next) {
 		var counterModel = mongoose.model('Counter');
 		var heroModel = mongoose.model('Hero');
 
@@ -52,7 +52,8 @@ module.exports = function(app) {
 		if (req.params.type === 'map') {
 			counterModel.find({ heroID: req.params.id }, function(err, counters) {
 				if (err) {
-					throw err;
+					next(err);
+					return;
 				}
 
 				res.json(counters);
@@ -63,13 +64,15 @@ module.exports = function(app) {
 				if (err || !foundByID) {
 					heroModel.findOne({urlName: req.params.id.toLowerCase()}, function (err, foundByName) {
 						if (err) {
-							throw err;
+							next(err);
+							return;
 						}
 
 						if (foundByName) {
 							callback(foundByName);
 						} else {
-							throw "ERR: Couldn't find hero with urlName of " + req.params.id.toLowerCase();
+							next("ERR: Couldn't find hero with urlName of " + req.params.id.toLowerCase());
+							return;
 						}
 					});
 				} else {
@@ -94,17 +97,19 @@ module.exports = function(app) {
 		});
 	});
 
-	app.post('/api/:type/:heroID/counter/', function (req, res) {
+	app.post('/api/:type/:heroID/counter/', function (req, res, next) {
 		var counterModel = mongoose.model('Counter');
 
 		app.log('Adding ' + req.params.type + ' counter...');
 
 		if (!req.body) {
-			throw 'Parser error';
+			next('Parser error');
+			return;
 		}
 
 		if (!req.body.details) {
-			throw 'Not enough details';
+			next('Not enough details');
+			return;
 		}
 
 		app.log(JSON.stringify(req.body));
@@ -130,13 +135,14 @@ module.exports = function(app) {
 		});
 	});
 
-	app.post('/api/:type/:heroID/counter/:counterID', function (req, res) {
+	app.post('/api/:type/:heroID/counter/:counterID', function (req, res, next) {
 		var counterModel = mongoose.model('Counter');
 
 		app.log("Voting...");
 
 		if (!req.body) {
-			throw 'Parser error';
+			next('Parser error');
+			return;
 		}
 
 		var isUpvote = req.body.isUpvote;

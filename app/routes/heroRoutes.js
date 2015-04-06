@@ -3,19 +3,20 @@ var mongoose = require('mongoose');
 module.exports = function(app) {
 	app.log('Hero routes loaded');
 
-	app.get('/api/hero/', function (req, res) {
+	app.get('/api/hero/', function (req, res, next) {
 		var heroModel = mongoose.model('Hero');
 		app.log('Getting all heroes...');
 		heroModel.find(function(err, heroes) {
 			if (err) {
-				throw err;
+				next(err);
+				return;
 			}
 
 			res.json(heroes);
 		});
 	});
 
-	app.get('/api/hero/:name', function (req, res) {
+	app.get('/api/hero/:name', function (req, res, next) {
 		var heroModel = mongoose.model('Hero');
 		var searchName = req.params.name.toLowerCase();
 
@@ -23,7 +24,8 @@ module.exports = function(app) {
 
 		heroModel.findOne({urlName: searchName}, function (err, hero) {
 			if (err) {
-				throw err;
+				next(err);
+				return;
 			}
 
 			if (hero) {
