@@ -1,5 +1,6 @@
 #!/bin/bash
 ERRS="";
+clear
 echo "Stopping..."
 sudo stop hots-counter
 echo "Stopped... updating from git..."
