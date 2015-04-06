@@ -10,50 +10,17 @@
 	display: none;
 }
 
-.listItem {
-}
-
-.listItemLink {
-}
-
 .listItemLink > small {
 	display: none;
-}
-
-.smallerPortrait {
-}
-
-.backToHeroes {
-}
-
-.heroDetailsTitle {
 }
 
 .heroDetailsSubtitle {
 	margin-left:2em;
 }
 
-.heroPortraitBig {
-}
-
-.tipListHeader {
-}
-
 .voteTotal {
 	display: block;
 	font-size: 300%;
-}
-
-.goodTip {
-}
-
-.tipDetails {
-}
-
-.possibleTroll {
-}
-
-textarea.form-control {
 }
 
 .topBanner {
@@ -74,4 +41,9 @@ textarea.form-control {
 
 .navPanel  > ul > li > a {
 	font-size: 100%;
+}
+
+.share-buttons img {
+	width: 32px;
+	height: 32px;
 }
