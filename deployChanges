@@ -1,6 +1,5 @@
 #!/bin/bash
-ERR = false;
-ERRS = "";
+ERRS="";
 echo "Stopping..."
 sudo stop hots-counter
 echo "Stopped... updating from git..."
@@ -8,8 +7,7 @@ if git pull https://github.com/Evertras/HotsCounter.git
 then
 	echo "Git pull successful"
 else
-	ERRS += "GIT FAILED!"
-	ERR = true;
+	ERRS+="GIT FAILED!"
 fi
 # cd public/
 # echo "Running npm install..."
@@ -22,13 +20,14 @@ if grunt
 then
 	echo "Grunt successful"
 else
-	ERRS += "GRUNT FAILED!"
+	ERRS+="GRUNT FAILED!"
+fi
 echo "Starting site..."
 sudo start hots-counter
 
-if $ERR
+if ERRS=""
 then
-	cowsay -f dragon $ERRS
-else
 	cowsay "Changes deployed successfully!"
+else
+	cowsay -f dragon $ERRS
 fi
