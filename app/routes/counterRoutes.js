@@ -1,5 +1,5 @@
 var mongoose = require('mongoose');
-//var _ = require('underscore');
+var _ = require('underscore');
 
 module.exports = function(app) {
 	app.get('/api/counter/total', function (req, res) {

@@ -18,7 +18,6 @@
 
 	"predef": [
 		"angular",
-		"_",
 		"require",
 		"module"
 	]
