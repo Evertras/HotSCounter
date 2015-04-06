@@ -40,6 +40,9 @@ footer, .push {
 	background-image: url('img/empty.gif');
 }
 
+.hidden {
+	display: none;
+}
 
 /* Post modifiers */
 .possibleTroll {

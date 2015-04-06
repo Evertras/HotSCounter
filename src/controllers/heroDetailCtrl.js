@@ -51,6 +51,10 @@
 
 				$window.ga('send', 'event', 'Shared', sharedTo, $scope.hero.name);
 			});
+
+			$(".counterPickLink").click(function() {
+				$window.ga('send', 'event', 'ReferredTo', 'HeroesCounters', $scope.hero.name);
+			});
 		}
 	]);
 })();

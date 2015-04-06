@@ -6,8 +6,9 @@
 			restrict: 'E',
 			templateUrl: 'template/tip-list.html',
 			scope: {
-				tips: '=tips',
-				type: '@type'
+				tips: '=',
+				type: '@',
+				canAdd: '@'
 			},
 			controller: 'tipListCtrl',
 			controllerAs: 'tipListCtrl'

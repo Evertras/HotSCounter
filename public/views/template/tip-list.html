@@ -15,7 +15,7 @@
 			{{tip.details}}
 		</td>
 	</tr>
-	<tr>
+	<tr ng-class="{ hidden: !canAdd }">
 		 <td colspan="2">
 			<textarea ng-model="tipText" placeholder="Type your tip and then click Add! (Maximum 1000 characters)" rows="5" maxlength="1000"></textarea>
 			<div>
