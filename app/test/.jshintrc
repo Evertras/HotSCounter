@@ -14,6 +14,8 @@
 	"unused": true,
 
 	"jquery": true,
+	"node": true,
+	"mocha": true,
 
 	"predef": [
 		"angular",

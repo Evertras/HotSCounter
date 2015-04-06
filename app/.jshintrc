@@ -14,6 +14,7 @@
 	"unused": true,
 
 	"jquery": true,
+	"node": true,
 
 	"predef": [
 		"angular",
