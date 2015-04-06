@@ -30,6 +30,29 @@ module.exports = function(app) {
 		});
 	});
 
+	app.get('/api/counter/latest/:num', function (req, res) {
+		var counterModel = mongoose.model('Counter');
+		var numRecordsParsed = parseInt(req.params.num, 10);
+		var numRecords = 10;
+
+		if (numRecordsParsed && numRecordsParsed >= 1 && numRecordsParsed <= 20) {
+			numRecords = numRecordsParsed;
+		}
+
+		counterModel
+			.find()
+			.sort( { '_id' : -1 })
+			.limit(numRecords)
+			.exec(function(err, counters) {
+				if (err) {
+					app.log("ERROR: " + err);
+					res.status(500).send(err);
+				}
+
+				res.json(counters);
+			});
+	});
+
 	app.get('/api/:type/:id/counter', function (req, res, next) {
 		var counterModel = mongoose.model('Counter');
 		var heroModel = mongoose.model('Hero');
