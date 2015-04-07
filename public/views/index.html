@@ -107,9 +107,15 @@
 		}]);
 
 		app.controller('newestTipsCtrl', ['$scope', '$http', 'heroDataService', 'mapDataService', function($scope, $http, heroDataService, mapDataService) {
-			$http.get('/api/counter/latest/5').success(function (result) {
-				$scope.newestCounters = result;
-			});
+			function updateLatestCounters() {
+				$http.get('/api/counter/latest/5').success(function (result) {
+					$scope.newestCounters = result;
+				});
+			}
+
+			updateLatestCounters();
+
+			setInterval(updateLatestCounters, 60 * 1000);
 		}]);
 
 		app.config(['$routeProvider', function($routeProvider) {
