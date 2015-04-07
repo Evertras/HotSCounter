@@ -19,9 +19,7 @@
 					});
 				}
 
-				updateTotals();
-
-				$rootScope.$on("$routeChangeSuccess", function() {
+				$rootScope.$on("$viewContentLoaded", function() {
 					updateTotals();
 				});
 			}]
