@@ -56,8 +56,10 @@
 		</div>
 
 		<aside class="tipListAside hideMobile gradientBanner" ng-controller="newestTipsCtrl">
-			<div class="tipListHeader">Latest tips</div>
-			<hc-tip-list tips="newestCounters" sort="newest" show-portrait="true" shortened="true"></hc-tip-list>
+			<div ng-show="isVisible">
+				<div class="tipListHeader">Latest tips <a href="#/newest">(See More)</a></div>
+				<hc-tip-list tips="newestCounters" sort="newest" show-portrait="true" shortened="true"></hc-tip-list>
+			</div>
 		</aside>
 
 		<div class="container">
@@ -76,7 +78,7 @@
 	</footer>
 
 	<script>
-		var app = angular.module('hotsCounters', ['ngRoute', 'heroListCtrl', 'heroDetailCtrl', 'tipList', 'mapListCtrl', 'mapDetailCtrl', 'utilDataService', 'voteStats']);
+		var app = angular.module('hotsCounters', ['ngRoute', 'heroListCtrl', 'heroDetailCtrl', 'tipList', 'mapListCtrl', 'mapDetailCtrl', 'utilDataService', 'voteStats', 'newestTipsFullCtrl']);
 
 		app.controller('navCtrl', ['$scope', '$location', '$window', '$rootScope', '$route', function($scope, $location, $window, $rootScope, $route) {
 			$scope.navClassFor = function(page) {
@@ -106,16 +108,36 @@
 			});
 		}]);
 
-		app.controller('newestTipsCtrl', ['$scope', '$http', 'heroDataService', 'mapDataService', function($scope, $http, heroDataService, mapDataService) {
-			function updateLatestCounters() {
-				$http.get('/api/counter/latest/5').success(function (result) {
-					$scope.newestCounters = result;
-				});
-			}
+		app.controller('newestTipsCtrl',
+				[
+				'$scope',
+				'$http',
+				'heroDataService',
+				'mapDataService',
+				'$location',
+				'$rootScope',
+				function($scope, $http, heroDataService, mapDataService, $location, $rootScope) {
+					function setVisible() {
+						$scope.isVisible = $location.path().substring(1).indexOf('newest') !== 0;
+					}
 
-			updateLatestCounters();
+					setVisible();
 
-			setInterval(updateLatestCounters, 60 * 1000);
+					$rootScope.$on('$routeChangeSuccess', function(currentRoute, prevRoute) {
+						setVisible();
+					});
+
+					function updateLatestCounters() {
+						if ($scope.isVisible) {
+							$http.get('/api/counter/newest/5').success(function (result) {
+								$scope.newestCounters = result;
+							});
+						}
+					}
+
+					updateLatestCounters();
+
+					setInterval(updateLatestCounters, 60 * 1000);
 		}]);
 
 		app.config(['$routeProvider', function($routeProvider) {
@@ -136,6 +158,10 @@
 				when('/map/:mapId', {
 					templateUrl: 'template/map.html',
 					controller: 'mapDetailCtrl'
+				}).
+				when('/newest', {
+					templateUrl: 'template/newest-tips-full.html',
+					controller: 'newestTipsFullCtrl'
 				}).
 				when('/about', {
 					templateUrl: 'template/about.html',

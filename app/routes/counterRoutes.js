@@ -30,12 +30,13 @@ module.exports = function(app) {
 		});
 	});
 
-	app.get('/api/counter/latest/:num', function (req, res) {
+	app.get('/api/counter/newest/:num', function (req, res) {
 		var counterModel = mongoose.model('Counter');
 		var numRecordsParsed = parseInt(req.params.num, 10);
 		var numRecords = 10;
+		var maxRecords = 50;
 
-		if (numRecordsParsed && numRecordsParsed >= 1 && numRecordsParsed <= 20) {
+		if (numRecordsParsed && numRecordsParsed >= 1 && numRecordsParsed <= maxRecords) {
 			numRecords = numRecordsParsed;
 		}
 
