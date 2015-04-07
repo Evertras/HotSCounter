@@ -55,6 +55,10 @@
 			$(".counterPickLink").click(function() {
 				$window.ga('send', 'event', 'ReferredTo', 'HeroesCounters', $scope.hero.name);
 			});
+
+			$(".hotslogsLink").click(function() {
+				$window.ga('send', 'event', 'ReferredTo', 'HotsLogs', $scope.hero.name);
+			});
 		}
 	]);
 })();

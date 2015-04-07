@@ -164,6 +164,11 @@ textarea {
 	font-size: 125%;
 }
 
+.hotslogsLink {
+	font-family: Lato, Helvetica, Arial, Sans-serif;
+	font-size: 125%;
+}
+
 .listItem {
 	padding: 0.25em;
 }
