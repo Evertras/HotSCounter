@@ -55,13 +55,6 @@
 			</div>
 		</div>
 
-		<aside class="tipListAside hideMobile gradientBanner" ng-controller="newestTipsCtrl">
-			<div ng-show="isVisible">
-				<div class="tipListHeader">Latest tips <a href="#/newest">(See More)</a></div>
-				<hc-tip-list tips="newestCounters" sort="newest" show-portrait="true" shortened="true"></hc-tip-list>
-			</div>
-		</aside>
-
 		<div class="container">
 			<div ng-view autoscroll="true"></div>
 		</div>
@@ -106,38 +99,6 @@
 					$rootScope.title = '';
 				}
 			});
-		}]);
-
-		app.controller('newestTipsCtrl',
-				[
-				'$scope',
-				'$http',
-				'heroDataService',
-				'mapDataService',
-				'$location',
-				'$rootScope',
-				function($scope, $http, heroDataService, mapDataService, $location, $rootScope) {
-					function setVisible() {
-						$scope.isVisible = $location.path().substring(1).indexOf('newest') !== 0;
-					}
-
-					setVisible();
-
-					$rootScope.$on('$routeChangeSuccess', function(currentRoute, prevRoute) {
-						setVisible();
-					});
-
-					function updateLatestCounters() {
-						if ($scope.isVisible) {
-							$http.get('/api/counter/newest/5').success(function (result) {
-								$scope.newestCounters = result;
-							});
-						}
-					}
-
-					updateLatestCounters();
-
-					setInterval(updateLatestCounters, 60 * 1000);
 		}]);
 
 		app.config(['$routeProvider', function($routeProvider) {
