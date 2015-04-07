@@ -37,7 +37,7 @@ footer, .push {
 	top:0;
 	left:0;
 	z-index:1;
-	background-image: url('img/empty.gif');
+	background-image: url('/img/empty.gif');
 }
 
 .hidden {
@@ -65,6 +65,25 @@ textarea {
 }
 
 /* Image modifiers */
+.insetPortrait {
+	width: 48px;
+	height: 48px;
+	-webkit-border-radius: 20px;
+	-moz-border-radius: 20px;
+	border-radius: 20px;
+	float: left;
+	margin-right: 10px;
+	margin-bottom: 3px;
+}
+
+.smallPortrait {
+	width: 64px;
+	height: 64px;
+	-webkit-border-radius: 10px;
+	-moz-border-radius: 10px;
+	border-radius: 10px;
+}
+
 .smallerPortrait {
 	width: 48px;
 	height: 48px;
@@ -176,6 +195,13 @@ textarea {
 	padding-top: 1em;
 }
 
+.tipListAside {
+	position: absolute;
+	left: 0;
+	top: 150px;
+	width: 18%;
+}
+
 /* DIV modifiers */
 .heroDetailsTitlePanel {
 	margin-top:2em;
@@ -184,6 +210,7 @@ textarea {
 
 .gradientBanner {
 	background: -webkit-linear-gradient(left, #eee, #fff);
+	background: -webkit-gradient(linear, left top, right top, color-stop(0%, #eee), color-stop(100%, #fff));
 	background: -o-linear-gradient(right, #eee, #fff);
 	background: -moz-linear-gradient(right, #eee, #fff);
 	background: linear-gradient(to right #eee, #fff);

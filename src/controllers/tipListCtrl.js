@@ -3,12 +3,13 @@
 
 	app.controller('tipListCtrl', [
 					'$scope',
+					'$http',
 					'heroDataService',
 					'mapDataService',
 					'utilDataService',
 					'$routeParams',
 					'$location',
-	function($scope, heroDataService, mapDataService, utilDataService, $routeParams, $location) {
+	function($scope, $http, heroDataService, mapDataService, utilDataService, $routeParams, $location) {
 		var type = $location.path().substring(1).indexOf('map') === 0 ? 'map' : 'hero';
 		var dataService = type === 'map' ? mapDataService : heroDataService;
 		var mySource = utilDataService.mySource;
@@ -21,6 +22,14 @@
 					return prev + cur;
 				}, 0);
 		};
+
+		if ($scope.sort === 'newest') {
+			$scope.sortFunc = function(tip) {
+				return tip._id;
+			};
+		} else {
+			$scope.sortFunc = $scope.voteTotal;
+		}
 
 		$scope.upvote = function(tip) {
 			dataService.upvoteCounter(tip);
@@ -74,6 +83,82 @@
 			}
 
 			$scope.tipText = "";
+		};
+
+		var portraitData = { };
+
+		$scope.allHeroes = heroDataService.allHeroes;
+		$scope.allMaps = mapDataService.allMaps;
+
+		$scope.$watch(function() { return $scope.allHeroes.length; },
+			function() {
+				var i;
+
+				for (i = 0; i < $scope.allHeroes.length; ++i) {
+					var hero = $scope.allHeroes[i];
+
+					var data = {
+						src: hero.imgUrl,
+						title: hero.name,
+						url: '/#/hero/' + hero.urlName
+					};
+
+					portraitData[hero._id.toString()] = data;
+					portraitData[hero.urlName] = data;
+				}
+			});
+		
+		$scope.$watch(function() { return $scope.allMaps.length; },
+			function() {
+				var i;
+
+				for (i = 0; i < $scope.allMaps.length; ++i) {
+					var map = $scope.allMaps[i];
+
+					var data = {
+						src: map.imgUrl,
+						title: map.name,
+						url: '/#/map/' + map._id.toString()
+					};
+
+					portraitData[map._id.toString()] = data;
+				}
+			});
+
+		$scope.getPortraitSrc = function (tip) {
+			if (portraitData[tip.heroID]) {
+				return portraitData[tip.heroID].src;
+			} else {
+				return '//:0';
+			}
+		};
+
+		$scope.getPortraitTitle = function (tip) {
+			if (portraitData[tip.heroID]) {
+				return portraitData[tip.heroID].title;
+			} else {
+				return 'ERR';
+			}
+		};
+
+		$scope.getPortraitUrl = function (tip) {
+			if (portraitData[tip.heroID]) {
+				return portraitData[tip.heroID].url;
+			} else {
+				return '#';
+			}
+		};
+
+		$scope.getTipDetails = function (tip) {
+			var maxLen = 150;
+
+			if ($scope.shortened) {
+				if (tip.details.length > maxLen) {
+					return tip.details.substring(0, maxLen -1) + "...";
+				}
+			}
+
+			return tip.details;
 		};
 	}]);
 })();

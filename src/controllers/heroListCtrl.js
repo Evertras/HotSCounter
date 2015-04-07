@@ -6,7 +6,7 @@
 
 		$scope.allHeroChunks = [];
 
-		$scope.$watch(function(scope) { return scope.allHeroes.length; },
+		$scope.$watch(function() { return $scope.allHeroes.length; },
 			function() {
 				$scope.allHeroChunks = [];
 

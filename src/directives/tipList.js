@@ -8,7 +8,10 @@
 			scope: {
 				tips: '=',
 				type: '@',
-				canAdd: '@'
+				canAdd: '@',
+				sort: '@',
+				showPortrait: '@',
+				shortened: '@'
 			},
 			controller: 'tipListCtrl',
 			controllerAs: 'tipListCtrl'

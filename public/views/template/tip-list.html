@@ -1,5 +1,5 @@
 <table class="table">
-	<tr ng-repeat="tip in tips | filter: { type: type } | orderBy:voteTotal:true" ng-show="voteTotal(tip) > -10">
+	<tr ng-repeat="tip in tips | filter: { type: type } | orderBy:sortFunc:true" ng-show="voteTotal(tip) > -10">
 		<td class="text-center voteTD">
 			<div class="voteTotal">{{ voteTotal(tip) }}</div>
 			<div class="btn-group-vertical hideMobile">
@@ -11,13 +11,16 @@
 				<button class="btn btn-lg" ng-class="downvoteClass(tip)" ng-click="downvote(tip)"><span class="glyphicon glyphicon-chevron-down"></span></button>
 			</div>
 		</td>
-		<td class ="tipDetails" ng-class="{'possibleTroll': voteTotal(tip) < 0, 'goodPost': voteTotal(tip) > 9}">
-			{{tip.details}}
+		<td class="tipDetails" ng-class="{'possibleTroll': voteTotal(tip) < 0, 'goodPost': voteTotal(tip) > 9}">
+			<div>
+				<a href='{{ getPortraitUrl(tip) }}'><img ng-show="showPortrait" ng-src="{{ getPortraitSrc(tip) }}" class="insetPortrait" alt="{{tip.heroID}}" title="{{ getPortraitTitle(tip) }}"></a>
+				{{ getTipDetails(tip) }}
+			</div>
 		</td>
 	</tr>
-	<tr ng-class="{ hidden: !canAdd }">
+	<tr ng-show="canAdd">
 		 <td colspan="2">
-			<textarea ng-model="tipText" placeholder="Type your tip and then click Add! (Maximum 1000 characters)" rows="5" maxlength="1000"></textarea>
+			<textarea ng-model="tipText" placeholder="Type your tip and then click Add! (Maximum 1000 characters, will be all joined into a single line)" rows="4" maxlength="1000"></textarea>
 			<div>
 				<button class="btn btn-success btn-xs hideMobile" ng-click="addTip()"><span class="glyphicon glyphicon-plus"></span> Add</button>
 				<button class="btn btn-success btn-lg mobileOnly" ng-click="addTip()"><span class="glyphicon glyphicon-plus"></span> Add</button>

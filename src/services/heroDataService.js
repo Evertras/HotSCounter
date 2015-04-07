@@ -10,7 +10,11 @@
 
 		var heroesRaw = Hero.query(function() {
 			for (var i = 0; i < heroesRaw.length; ++i) {
-				heroesDictionary[heroesRaw[i]._id] = heroesRaw[i];
+				if (heroesDictionary[heroesRaw[i]._id]) {
+					// continue;
+				} else {
+					heroesDictionary[heroesRaw[i]._id] = heroesRaw[i];
+				}
 			}
 		});
 
