@@ -5,16 +5,24 @@
 		return {
 			restrict: 'E',
 			template: '{{tipTotal}} tips added and {{voteTotal}} votes tallied so far!',
-			controller: ['$http', '$scope', function($http, $scope) {
+			controller: ['$http', '$scope', '$rootScope', function($http, $scope, $rootScope) {
 				$scope.tipTotal = 0;
 				$scope.voteTotal = 0;
 
-				$http.get("/api/counter/total").success(function(data) {
-					$scope.tipTotal = data.total;
-				});
+				function updateTotals() {
+					$http.get("/api/counter/total").success(function(data) {
+						$scope.tipTotal = data.total;
+					});
 
-				$http.get("/api/counter/totalvotes").success(function(data) {
-					$scope.voteTotal = data.total;
+					$http.get("/api/counter/totalvotes").success(function(data) {
+						$scope.voteTotal = data.total;
+					});
+				}
+
+				updateTotals();
+
+				$rootScope.$on("$routeChangeSuccess", function() {
+					updateTotals();
 				});
 			}]
 		};
