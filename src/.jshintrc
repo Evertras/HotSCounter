@@ -16,7 +16,6 @@
 	"jquery": true,
 
 	"predef": [
-		"console",
 		"angular",
 		"require",
 		"module",
