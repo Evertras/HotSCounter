@@ -6,10 +6,10 @@
 		<div ng-repeat="map in mapChunk" class="listItem gradientBanner">
 			<div class="media">
 				<div class="media-left">
-					<a href="#/map/{{map._id}}"><img class="media-object smallerPortrait" src="{{map.imgUrl}}" alt="{{map.name}}"></a>
+					<a href="#/map/{{map.urlName}}"><img class="media-object smallerPortrait" src="{{map.imgUrl}}" alt="{{map.name}}"></a>
 				</div>
 				<div class="media-body">
-					<h4><a href="#/map/{{map._id}}">{{map.name}}</a></h4>
+					<h4><a href="#/map/{{map.urlName}}">{{map.name}}</a></h4>
 				</div>
 			</div>
 		</div>

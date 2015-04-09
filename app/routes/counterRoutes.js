@@ -57,10 +57,11 @@ module.exports = function(app) {
 	app.get('/api/:type/:id/counter', function (req, res, next) {
 		var counterModel = mongoose.model('Counter');
 		var heroModel = mongoose.model('Hero');
+		var mapModel = mongoose.model('Map');
 
 		app.log('Getting counters for ' + req.params.type + ' with ID: ' + req.params.id);
 
-		function callback(hero) {
+		function heroCallback(hero) {
 			var heroID = hero._id.toString();
 
 			counterModel.find({ $or: [{ heroID: heroID }, { heroID: hero.urlName }] }, function(err, counters) {
@@ -73,14 +74,37 @@ module.exports = function(app) {
 			});
 		}
 
-		if (req.params.type === 'map') {
-			counterModel.find({ heroID: req.params.id }, function(err, counters) {
+		function mapCallback(map) {
+			var mapID = map._id.toString();
+
+			counterModel.find({ $or: [{ heroID: mapID }, { heroID: map.urlName }] }, function(err, counters) {
 				if (err) {
-					next(err);
-					return;
+				       app.log("ERROR: " + err);
+				       res.status(500).send(err);
 				}
 
 				res.json(counters);
+			});
+		}
+
+		if (req.params.type === 'map') {
+			mapModel.findById(req.params.id, function (err, foundByID) {
+				if (err || !foundByID) {
+					mapModel.findOne({urlName: req.params.id.toLowerCase()}, function (err, foundByName) {
+						if (err) {
+							next(err);
+							return;
+						}
+
+						if (foundByName) {
+							mapCallback(foundByName);
+						} else {
+							next("ERR: Couldn't find map with urlName of " + req.params.id.toLowerCase());
+						}
+					});
+				} else {
+					mapCallback(foundByID);
+				}
 			});
 		}
 		else {
@@ -93,14 +117,14 @@ module.exports = function(app) {
 						}
 
 						if (foundByName) {
-							callback(foundByName);
+							heroCallback(foundByName);
 						} else {
 							next("ERR: Couldn't find hero with urlName of " + req.params.id.toLowerCase());
 							return;
 						}
 					});
 				} else {
-					callback(foundByID);
+					heroCallback(foundByID);
 				}
 			});
 		}

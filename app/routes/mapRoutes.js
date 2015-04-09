@@ -1,4 +1,3 @@
-
 var mongoose = require('mongoose');
 
 module.exports = function(app) {
@@ -17,18 +16,23 @@ module.exports = function(app) {
 		});
 	});
 
-	app.get('/api/map/:id', function (req, res, next) {
+	app.get('/api/map/:name', function (req, res, next) {
 		var mapModel = mongoose.model('Map');
+		var searchName = req.params.name.toLowerCase();
 
-		app.log('Getting specific map with ID: ' + req.params.id);
+		app.log('Getting specific map with name: ' + searchName);
 
-		mapModel.findById(req.params.id, function (err, map) {
+		mapModel.findOne({urlName: searchName}, function (err, map) {
 			if (err) {
 				next(err);
 				return;
 			}
 
-			app.log('Found ' + map.name);
+			if (map) {
+				app.log('Found ' + map.name);
+			} else {
+				app.log("ERR: Couldn't find map...");
+			}
 
 			res.json(map);
 		});
