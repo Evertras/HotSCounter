@@ -118,10 +118,11 @@
 					var data = {
 						src: map.imgUrl,
 						title: map.name,
-						url: '/#/map/' + map._id.toString()
+						url: '/#/map/' + map.urlName.toString()
 					};
 
 					portraitData[map._id.toString()] = data;
+					portraitData[map.urlName] = data;
 				}
 			});
 
