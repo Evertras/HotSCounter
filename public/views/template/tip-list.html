@@ -10,6 +10,10 @@
 				<button class="btn btn-lg" ng-class="upvoteClass(tip)" ng-click="upvote(tip)"><span class="glyphicon glyphicon-chevron-up"></span></button>
 				<button class="btn btn-lg" ng-class="downvoteClass(tip)" ng-click="downvote(tip)"><span class="glyphicon glyphicon-chevron-down"></span></button>
 			</div>
+			<div class="voteStats">
+				<div>+{{ tip | totalUpvotes }} / -{{ tip | totalDownvotes }}</div>
+				<div>({{ tip | percentUpvotes }})</div>
+			</div>
 		</td>
 		<td class="tipDetails" ng-class="{'possibleTroll': voteTotal(tip) < 0, 'goodPost': voteTotal(tip) > 9}">
 			<div>

@@ -71,7 +71,7 @@
 	</footer>
 
 	<script>
-		var app = angular.module('hotsCounters', ['ngRoute', 'heroListCtrl', 'heroDetailCtrl', 'tipList', 'mapListCtrl', 'mapDetailCtrl', 'utilDataService', 'voteStats', 'newestTipsFullCtrl']);
+		var app = angular.module('hotsCounters', ['ngRoute', 'heroListCtrl', 'heroDetailCtrl', 'tipList', 'mapListCtrl', 'mapDetailCtrl', 'utilDataService', 'voteStats', 'newestTipsFullCtrl', 'voteFilters']);
 
 		app.controller('navCtrl', ['$scope', '$location', '$window', '$rootScope', '$route', function($scope, $location, $window, $rootScope, $route) {
 			$scope.navClassFor = function(page) {

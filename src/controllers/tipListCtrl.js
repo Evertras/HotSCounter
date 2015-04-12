@@ -1,5 +1,5 @@
 (function() {
-	var app = angular.module('tipListCtrl', ['ngRoute', 'heroDataService', 'mapDataService', 'utilDataService']);
+	var app = angular.module('tipListCtrl', ['ngRoute', 'heroDataService', 'mapDataService', 'utilDataService', 'voteFilters']);
 
 	app.controller('tipListCtrl', [
 					'$scope',
