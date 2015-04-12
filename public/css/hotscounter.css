@@ -241,13 +241,11 @@ textarea {
 } */
 
 .bannerTitleSection {
-	display: inline-block;
 	height: 140px;
 	float: left;
 }
 
 .bannerMenuSection {
-	display: inline-block;
 	height: 140px;
 	float: right;
 	padding: 40px;
