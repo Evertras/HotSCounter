@@ -1,7 +1,7 @@
 <table class="table">
 	<tr ng-repeat="tip in tips | filter: { type: type } | orderBy:sortFunc:true" ng-show="voteTotal(tip) > -10">
 		<td class="text-center voteTD">
-			<div class="voteTotal">{{ voteTotal(tip) }}</div>
+			<div class="voteTotal">{{ tip | totalNetVotes }}</div>
 			<div class="btn-group-vertical hideMobile">
 				<button class="btn btn-sm" ng-class="upvoteClass(tip)" ng-click="upvote(tip)"><span class="glyphicon glyphicon-chevron-up"></span></button>
 				<button class="btn btn-sm" ng-class="downvoteClass(tip)" ng-click="downvote(tip)"><span class="glyphicon glyphicon-chevron-down"></span></button>
