@@ -325,13 +325,13 @@ var heroInit = function (app) {
 	];
 
 	var freeHeroes = [
-		muradin,
-		nova,
-		raynor,
-		rehgar,
-		tassadar,
-		tyrael,
-		zagara
+		chen,
+		malfurion,
+		sonya,
+		uther,
+		valla,
+		hammer,
+		falstad
 	];
 };
 
