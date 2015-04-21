@@ -325,13 +325,13 @@ var heroInit = function (app) {
 	];
 
 	var freeHeroes = [
-		chen,
-		malfurion,
-		sonya,
-		uther,
-		valla,
-		hammer,
-		falstad
+		arthas,
+		etc,
+		kerrigan,
+		lili,
+		tychus,
+		nazeebo,
+		illidan
 	];
 };
 
