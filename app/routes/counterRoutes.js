@@ -202,6 +202,8 @@ module.exports = function(app) {
 			source = req.connection.remoteAddress;
 		}
 
+		app.log(JSON.stringify(req.body));
+
 		counterModel.findById(req.params.counterID, function (err, counter) {
 			if (err) {
 				app.log("ERROR: " + err);
