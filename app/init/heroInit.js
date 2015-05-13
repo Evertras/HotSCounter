@@ -332,13 +332,13 @@ var heroInit = function (app) {
 	];
 
 	var freeHeroes = [
-		malfurion,
-		nova,
-		rehgar,
-		tyrael,
-		valla,
-		chen,
-		sylvanas
+		etc,
+		jaina,
+		lili,
+		sonya,
+		uther,
+		hammer,
+		thrall
 	];
 };
 
