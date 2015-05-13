@@ -12,7 +12,7 @@ var favicon = require('serve-favicon');
 
 var app = express();
 
-app.currentPatch = "Sylvanas";
+app.currentPatch = "Kael'thas";
 
 var port = process.env.PORT || 8080;
 

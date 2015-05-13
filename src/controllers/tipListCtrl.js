@@ -1,15 +1,16 @@
 (function() {
-	var app = angular.module('tipListCtrl', ['ngRoute', 'heroDataService', 'mapDataService', 'utilDataService', 'voteFilters']);
+	var app = angular.module('tipListCtrl', ['ngRoute', 'heroDataService', 'mapDataService', 'commentDataService', 'utilDataService', 'voteFilters']);
 
 	app.controller('tipListCtrl', [
 					'$scope',
 					'$http',
 					'heroDataService',
 					'mapDataService',
+					'commentDataService',
 					'utilDataService',
 					'$routeParams',
 					'$location',
-	function($scope, $http, heroDataService, mapDataService, utilDataService, $routeParams, $location) {
+	function($scope, $http, heroDataService, mapDataService, commentDataService, utilDataService, $routeParams, $location) {
 		var type = $location.path().substring(1).indexOf('map') === 0 ? 'map' : 'hero';
 		var dataService = type === 'map' ? mapDataService : heroDataService;
 		var mySource = utilDataService.mySource;
@@ -83,6 +84,12 @@
 			}
 
 			$scope.tipText = "";
+		};
+
+		$scope.addComment = function(tip) {
+			commentDataService.addComment(tip, tip.newCommentText);
+
+			tip.newCommentText = "";
 		};
 
 		var portraitData = { };

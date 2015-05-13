@@ -30,6 +30,7 @@ module.exports = function(app) {
 		});
 	});
 
+
 	app.get('/api/counter/newest/:num', function (req, res) {
 		var counterModel = mongoose.model('Counter');
 		var numRecordsParsed = parseInt(req.params.num, 10);
@@ -183,6 +184,42 @@ module.exports = function(app) {
 		});
 	});
 
+	app.post('/api/counter/:counterID/comment/', function (req, res, next) {
+		var counterModel = mongoose.model('Counter');
+
+		app.log("Adding comment...");
+
+		if (!req.body) {
+			next('Parser error');
+			return;
+		}
+
+		var source;
+
+		if (req.headers['x-forwarded-for']) {
+			source = req.headers['x-forwarded-for'].split(',')[0];
+		} else {
+			source = req.connection.remoteAddress;
+		}
+
+		counterModel.findById(req.params.counterID, function (err, counter) {
+			if (err) {
+				app.log("ERROR: " + err);
+				res.status(500).send(err);
+			}
+
+			req.body.patch = app.currentPatch;
+			req.body.votes = [];
+			req.body.counterID = req.params.counterID;
+
+			counter.comments.push(req.body);
+			
+			counter.save();
+
+			res.end();
+		});
+	});
+
 	app.post('/api/:type/:heroID/counter/:counterID', function (req, res, next) {
 		var counterModel = mongoose.model('Counter');
 
@@ -223,6 +260,19 @@ module.exports = function(app) {
 			app.log('Successfully ' + (isUpvote ? 'upvoted' : 'downvoted') + ': ' + counter.details);
 
 			res.end();
+		});
+	});
+
+	app.get('/api/counter/:counterID', function (req, res) {
+		var counterModel = mongoose.model('Counter');
+
+		counterModel.findById(req.params.counterID, function (err, counter) {
+			if (err) {
+				app.log("ERROR: " + err);
+				res.status(500).send(err);
+			}
+
+			res.json(counter);
 		});
 	});
 

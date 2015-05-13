@@ -215,6 +215,12 @@ textarea {
 	width: 18%;
 }
 
+.commentText {
+	padding:0.5em 2em;
+	font-size: smaller;
+	font-style: italic;
+}
+
 /* DIV modifiers */
 .heroDetailsTitlePanel {
 	margin-top:2em;
@@ -227,6 +233,12 @@ textarea {
 	background: -o-linear-gradient(right, #eee, #fff);
 	background: -moz-linear-gradient(right, #eee, #fff);
 	background: linear-gradient(to right #eee, #fff);
+}
+
+.commentBar {
+	margin-top: 1em;
+	color: #888;
+	cursor: pointer;
 }
 
 /* Top banner */

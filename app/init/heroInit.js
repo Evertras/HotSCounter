@@ -124,6 +124,12 @@ var heroInit = function (app) {
 		isRanged: true
 	};
 
+	var kaelthas = {
+		name: "Kael'thas",
+		type: assassin,
+		subtitle: "Sun King"
+	};
+
 	var kerrigan = {
 		name: "Kerrigan",
 		type: assassin,
@@ -299,6 +305,7 @@ var heroInit = function (app) {
 		gazlowe,
 		illidan,
 		jaina,
+		kaelthas,
 		kerrigan,
 		lili,
 		malfurion,

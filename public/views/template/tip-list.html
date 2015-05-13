@@ -20,11 +20,33 @@
 				<a href='{{ getPortraitUrl(tip) }}'><img ng-show="showPortrait" ng-src="{{ getPortraitSrc(tip) }}" class="insetPortrait" alt="{{tip.heroID}}" title="{{ getPortraitTitle(tip) }}"></a>
 				{{ getTipDetails(tip) }}
 			</div>
+			<div class="commentBar" ng-click="tip.showComments = !tip.showComments"><span class="glyphicon glyphicon-comment"></span> {{ tip.comments.length }} comments</div>
+			<div ng-show="tip.showComments">
+				<div class="commentText" ng-repeat="comment in tip.comments">{{comment.text}}</div>
+				<div class="commentAdd">
+					<div>
+						<textarea
+							ng-model="tip.newCommentText"
+							placeholder="Type your comment and click Add! (Maximum 1000 characters, will be all joined in a single line)"
+							rows="3"
+							maxlength="1000"
+						></textarea>
+					</div>
+					<div>
+						<button class="btn btn-success btn-xs" ng-click="addComment(tip)"><span class="glyphicon glyphicon-plus"></span> Add</button>
+					</div>
+				</div>
+			</div>
 		</td>
 	</tr>
 	<tr ng-show="canAdd">
-		 <td colspan="2">
-			<textarea ng-model="tipText" placeholder="Type your tip and then click Add! (Maximum 1000 characters, will be all joined into a single line)" rows="4" maxlength="1000"></textarea>
+		<td colspan="2">
+			<textarea
+				 ng-model="tipText"
+				 placeholder="Type your tip and then click Add! (Maximum 1000 characters, will be all joined into a single line)"
+				 rows="4"
+				 maxlength="1000"
+			></textarea>
 			<div>
 				<button class="btn btn-success btn-xs hideMobile" ng-click="addTip()"><span class="glyphicon glyphicon-plus"></span> Add</button>
 				<button class="btn btn-success btn-lg mobileOnly" ng-click="addTip()"><span class="glyphicon glyphicon-plus"></span> Add</button>

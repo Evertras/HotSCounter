@@ -1,24 +1,14 @@
 var mongoose = require('mongoose');
 
 module.exports = function() {
-	var model = mongoose.model('Counter', {
+	var model = mongoose.model('Comment', {
 		patch: String,
 		source:	String,
 		type: String,
 		votes: [ { isUpvote: Boolean, source: String, patch: String } ],
-		comments: [ {
-			source: String,
-			patch: String,
-			text: String,
-			votes: [ { isUpvote: Boolean, source: String, patch: String } ]
-		} ],
 		details: String,
-		heroID: String
+		commentID: String
 		});
-
-	model.schema.path('type').validate(function (value) {
-			return /Counter|Helper|As/.test(value);
-		}, 'Invalid type');
 
 	model.schema.path('details').validate(function (details) {
 			return details.length < 1024;
