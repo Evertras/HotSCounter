@@ -20,10 +20,9 @@ module.exports = function(app) {
 
 		counterModel.aggregate(
 			{ '$unwind': '$comments' },
-			{ '$unwind': '$votes' },
-			{ '$project': { voteSize: { '$add': 1 } } },
+			{ '$project': { '_id': 1, voteSize: { '$size': '$votes' } } },
 			{ '$group': {
-							'_id': null,
+							'_id': 1,
 							'total': { '$sum': '$voteSize' }
 						}
 			},
