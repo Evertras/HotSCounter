@@ -18,16 +18,23 @@ module.exports = function(app) {
 	app.get('/api/counter/totalvotes', function (req, res) {
 		var counterModel = mongoose.model('Counter');
 
-		counterModel.find({}, function(err, counters) {
-			if (err) {
-				app.log("ERROR: " + err);
-				res.status(500).send(err);
-			}
+		counterModel.aggregate(
+			{ '$unwind': '$comments' },
+			{ '$unwind': '$votes' },
+			{ '$project': { voteSize: { '$add': 1 } } },
+			{ '$group': {
+							'_id': null,
+							'total': { '$sum': '$voteSize' }
+						}
+			},
+			function (err, data) {
+				if (err) {
+					app.log("ERROR: " + err);
+					res.status(500).send(err);
+				}
 
-			res.json( {
-				total: counters.map(function (counter) { return counter.votes.length; }).reduce(function(prev, res) { return prev + res; }, 0)
+				res.json(data[0]);
 			});
-		});
 	});
 
 
