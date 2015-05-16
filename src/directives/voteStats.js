@@ -4,7 +4,8 @@
 	app.directive('voteStats', function() {
 		return {
 			restrict: 'E',
-			template: '{{tipTotal}} tips added and {{voteTotal}} votes tallied so far!',
+			//template: '{{tipTotal}} tips added and {{voteTotal}} votes tallied so far!',
+			template: '{{tipTotal}} tips added so far!',
 			controller: ['$http', '$scope', '$rootScope', function($http, $scope, $rootScope) {
 				$scope.tipTotal = 0;
 				$scope.voteTotal = 0;
