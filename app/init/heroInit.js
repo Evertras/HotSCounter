@@ -332,13 +332,13 @@ var heroInit = function (app) {
 	];
 
 	var freeHeroes = [
-		etc,
-		jaina,
-		lili,
-		sonya,
-		uther,
-		hammer,
-		thrall
+		anubarak,
+		brightwing,
+		kerrigan,
+		muradin,
+		raynor,
+		nazeebo,
+		lostvikings
 	];
 };
 
