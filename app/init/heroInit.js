@@ -332,13 +332,13 @@ var heroInit = function (app) {
 	];
 
 	var freeHeroes = [
-		anubarak,
-		brightwing,
-		kerrigan,
-		muradin,
-		raynor,
-		nazeebo,
-		lostvikings
+		arthas,
+		malfurion,
+		stitches,
+		tyrande,
+		valla,
+		zagara,
+		illidan
 	];
 };
 
