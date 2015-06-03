@@ -124,6 +124,13 @@ var heroInit = function (app) {
 		isRanged: true
 	};
 
+	var johanna = {
+		name: "Johanna",
+		type: warrior,
+		subtitle: "Crusader of Zakarum",
+		isRanged: false
+	};
+
 	var kaelthas = {
 		name: "Kael'thas",
 		type: assassin,
@@ -305,6 +312,7 @@ var heroInit = function (app) {
 		gazlowe,
 		illidan,
 		jaina,
+		johanna,
 		kaelthas,
 		kerrigan,
 		lili,
@@ -332,13 +340,13 @@ var heroInit = function (app) {
 	];
 
 	var freeHeroes = [
-		arthas,
-		malfurion,
-		stitches,
-		tyrande,
-		valla,
-		zagara,
-		illidan
+		diablo,
+		etc,
+		falstad,
+		lili,
+		tychus,
+		azmodan,
+		tassadar
 	];
 };
 
