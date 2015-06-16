@@ -340,13 +340,13 @@ var heroInit = function (app) {
 	];
 
 	var freeHeroes = [
-		diablo,
-		etc,
-		falstad,
-		lili,
-		tychus,
-		azmodan,
-		tassadar
+		brightwing,
+		chen,
+		kerrigan,
+		malfurion,
+		valla,
+		hammer,
+		kaelthas
 	];
 };
 
