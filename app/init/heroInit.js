@@ -340,13 +340,13 @@ var heroInit = function (app) {
 	];
 
 	var freeHeroes = [
-		brightwing,
-		chen,
-		kerrigan,
-		malfurion,
-		valla,
-		hammer,
-		kaelthas
+		raynor,
+		muradin,
+		falstad,
+		sonya,
+		tyrande,
+		gazlowe,
+		azmodan
 	];
 };
 
