@@ -36,6 +36,10 @@ var mapInit = function (app) {
 		name: "Dragon Shire"
 	};
 
+	var battlefieldOfEternity = {
+		name: "Battlefield of Eternity"
+	};
+
 	var cursedHollow = {
 		name: "Cursed Hollow"
 	};
@@ -62,6 +66,7 @@ var mapInit = function (app) {
 
 	var allMaps = [
 		dragonshire,
+		battlefieldOfEternity,
 		cursedHollow,
 		skyTemple,
 		blackheartsBay,
