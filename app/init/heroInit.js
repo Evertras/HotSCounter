@@ -235,6 +235,13 @@ var heroInit = function (app) {
 		isRanged: true
 	};
 
+	var butcher = {
+		name: "The Butcher",
+		type: assassin,
+		subtitle: "Flesh Carver",
+		isRanged: false
+	};
+
 	var lostvikings = {
 		name: "The Lost Vikings",
 		type: specialist,
@@ -328,6 +335,7 @@ var heroInit = function (app) {
 		stitches,
 		sylvanas,
 		tassadar,
+		butcher,
 		lostvikings,
 		thrall,
 		tychus,
