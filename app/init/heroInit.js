@@ -348,13 +348,13 @@ var heroInit = function (app) {
 	];
 
 	var freeHeroes = [
-		malfurion,
-		stitches,
-		sylvanas,
-		tassadar,
-		valla,
-		zeratul,
-		johanna
+		etc,
+		diablo,
+		lili,
+		rehgar,
+		tychus,
+		hammer,
+		kaelthas
 	];
 };
 
