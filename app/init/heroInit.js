@@ -151,6 +151,13 @@ var heroInit = function (app) {
 		isRanged: true
 	};
 
+	var leoric = {
+		name: "Leoric",
+		type: warrior,
+		subtitle: "Skeleton King",
+		isRanged: false
+	};
+
 	var malfurion = {
 		name: "Malfurion",
 		type: support,
@@ -323,6 +330,7 @@ var heroInit = function (app) {
 		kaelthas,
 		kerrigan,
 		lili,
+		leoric,
 		malfurion,
 		muradin,
 		murky,
@@ -348,13 +356,13 @@ var heroInit = function (app) {
 	];
 
 	var freeHeroes = [
-		etc,
-		diablo,
-		lili,
-		rehgar,
-		tychus,
-		hammer,
-		kaelthas
+		arthas,
+		muradin,
+		nazeebo,
+		raynor,
+		uther,
+		jaina,
+		kerrigan
 	];
 };
 
