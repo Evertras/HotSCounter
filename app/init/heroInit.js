@@ -356,13 +356,13 @@ var heroInit = function (app) {
 	];
 
 	var freeHeroes = [
-		arthas,
-		muradin,
-		nazeebo,
-		raynor,
-		uther,
-		jaina,
-		kerrigan
+		chen,
+		malfurion,
+		tyrael,
+		valla,
+		zagara,
+		tyrande,
+		illidan
 	];
 };
 
