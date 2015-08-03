@@ -356,13 +356,13 @@ var heroInit = function (app) {
 	];
 
 	var freeHeroes = [
-		chen,
-		malfurion,
-		tyrael,
-		valla,
-		zagara,
-		tyrande,
-		illidan
+		etc,
+		lili,
+		nova,
+		tassadar,
+		thrall,
+		azmodan,
+		butcher
 	];
 };
 
