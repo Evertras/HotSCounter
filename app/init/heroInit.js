@@ -356,13 +356,13 @@ var heroInit = function (app) {
 	];
 
 	var freeHeroes = [
-		etc,
-		lili,
-		nova,
-		tassadar,
-		thrall,
-		azmodan,
-		butcher
+		raynor,
+		muradin,
+		falstad,
+		sonya,
+		sylvanas,
+		brightwing,
+		abathur
 	];
 };
 
