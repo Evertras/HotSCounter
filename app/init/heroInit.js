@@ -144,6 +144,13 @@ var heroInit = function (app) {
 		isRanged: false
 	};
 
+	var kharazim = {
+		name: "Kharazim",
+		type: support,
+		subtitle: "Veradani Monk",
+		isRanged: false
+	};
+
 	var lili = {
 		name: "Li Li",
 		type: support,
@@ -329,6 +336,7 @@ var heroInit = function (app) {
 		johanna,
 		kaelthas,
 		kerrigan,
+        kharazim,
 		lili,
 		leoric,
 		malfurion,
