@@ -364,13 +364,13 @@ var heroInit = function (app) {
 	];
 
 	var freeHeroes = [
-        anubarak,
-        malfurion,
-        nazeebo,
-        tychus,
-        valla,
-        johanna,
-        kaelthas
+        etc,
+        gazlowe,
+        lili,
+        rehgar,
+        hammer,
+        kerrigan,
+        leoric
 	];
 };
 
