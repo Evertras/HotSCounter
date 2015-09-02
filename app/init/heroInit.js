@@ -364,13 +364,13 @@ var heroInit = function (app) {
 	];
 
 	var freeHeroes = [
-        etc,
-        gazlowe,
-        lili,
-        rehgar,
-        hammer,
-        kerrigan,
-        leoric
+        jaina,
+        muradin,
+        raynor,
+        uther,
+        zagara,
+        illidan,
+        azmodan
 	];
 };
 
