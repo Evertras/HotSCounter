@@ -214,6 +214,13 @@ var heroInit = function (app) {
 		isRanged: false
 	};
 
+	var rexxar = {
+		name: "Rexxar",
+		type: warrior,
+		subtitle: "Champion of the Horde",
+		isRanged: true
+	};
+
 	var hammer = {
 		name: "Sgt. Hammer",
 		type: specialist,
@@ -346,6 +353,7 @@ var heroInit = function (app) {
 		nova,
 		raynor,
 		rehgar,
+        rexxar,
 		hammer,
 		sonya,
 		stitches,
