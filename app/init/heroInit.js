@@ -372,13 +372,13 @@ var heroInit = function (app) {
 	];
 
 	var freeHeroes = [
-        brightwing,
-        diablo,
-        malfurion,
-        stitches,
-        valla,
-        sylvanas,
-        zeratul
+        arthas,
+        etc,
+        lili,
+        sonya,
+        tychus,
+        nazeebo,
+        butcher
 	];
 };
 
