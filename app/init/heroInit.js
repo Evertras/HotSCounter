@@ -372,13 +372,13 @@ var heroInit = function (app) {
 	];
 
 	var freeHeroes = [
-        arthas,
-        etc,
-        lili,
-        sonya,
-        tychus,
-        nazeebo,
-        butcher
+        raynor,
+        muradin,
+        tyrael,
+        thrall,
+        tyrande,
+        gazlowe,
+        kharazim
 	];
 };
 
