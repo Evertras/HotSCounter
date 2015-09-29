@@ -372,13 +372,13 @@ var heroInit = function (app) {
 	];
 
 	var freeHeroes = [
-        raynor,
-        muradin,
-        tyrael,
-        thrall,
-        tyrande,
-        gazlowe,
-        kharazim
+        chen,
+        falstad,
+        malfurion,
+        rehgar,
+        valla,
+        johanna,
+        hammer
 	];
 };
 
