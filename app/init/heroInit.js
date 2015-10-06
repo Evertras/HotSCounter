@@ -165,6 +165,13 @@ var heroInit = function (app) {
 		isRanged: false
 	};
 
+    var ltmorales = {
+        name: "Lt. Morales",
+        type: support,
+        subtitle: "Combat Medic",
+        isRanged: true
+    };
+
 	var malfurion = {
 		name: "Malfurion",
 		type: support,
@@ -346,6 +353,7 @@ var heroInit = function (app) {
         kharazim,
 		lili,
 		leoric,
+        ltmorales,
 		malfurion,
 		muradin,
 		murky,
