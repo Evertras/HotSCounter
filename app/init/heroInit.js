@@ -372,13 +372,13 @@ var heroInit = function (app) {
 	];
 
 	var freeHeroes = [
-        chen,
-        falstad,
-        malfurion,
-        rehgar,
-        valla,
-        johanna,
-        hammer
+        azmodan,
+        etc,
+        kaelthas,
+        lili,
+        uther,
+        nova,
+        anubarak
 	];
 };
 
