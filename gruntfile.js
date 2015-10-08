@@ -36,13 +36,25 @@ module.exports = function(grunt) {
 				src: ['src/**/*.js'],
 				dest: 'concat.js'
 			}
-		}
+		},
+        sass: {
+            dist: {
+                options: {
+                    style: 'compressed',
+                    sourcemap: 'none'
+                },
+                files: {
+                    'public/css/hotscounter.min.css': 'public/css/hotscounter.scss'
+                }
+            }
+        }
 	});
 
+    grunt.loadNpmTasks('grunt-contrib-sass');
 	grunt.loadNpmTasks('grunt-contrib-uglify');
 	grunt.loadNpmTasks('grunt-contrib-jshint');
 	grunt.loadNpmTasks('grunt-simple-mocha');
 	grunt.loadNpmTasks('grunt-contrib-concat');
 
-	grunt.registerTask('default', ['jshint', 'simplemocha', 'concat:dist', 'uglify:build']);
+	grunt.registerTask('default', ['sass', 'jshint', 'simplemocha', 'concat:dist', 'uglify:build']);
 };
