@@ -380,13 +380,13 @@ var heroInit = function (app) {
 	];
 
 	var freeHeroes = [
-        azmodan,
-        etc,
-        kaelthas,
-        lili,
-        uther,
-        nova,
-        anubarak
+        arthas,
+        gazlowe,
+        malfurion,
+        stitches,
+        valla,
+        brightwing,
+        kerrigan
 	];
 };
 
