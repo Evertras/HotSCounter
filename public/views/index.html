@@ -20,6 +20,7 @@
 	<script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
 	<script src="libs/bootstrap/dist/js/bootstrap.min.js"></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/underscore.js/1.8.3/underscore-min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/3.5.6/d3.min.js" charset="utf-8"></script>
 
 	<script src="js/hotscounter.js"></script>
 	<script>
@@ -82,7 +83,8 @@
 				'utilDataService',
 				'voteStats',
 				'newestTipsFullCtrl',
-				'voteFilters'
+                'voteFilters',
+                'dataCtrl'
 				]);
 
 		app.controller('navCtrl', ['$scope', '$location', '$window', '$rootScope', '$route', function($scope, $location, $window, $rootScope, $route) {
@@ -139,7 +141,11 @@
 				when('/about', {
 					templateUrl: 'template/about.html',
 					title: ' - About'
-				});
+                }).
+                when('/data', {
+                    templateUrl: 'template/data.html',
+                    controller: 'dataCtrl'
+                });
 		}]);
 	</script>
 </body>
