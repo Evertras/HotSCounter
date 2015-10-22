@@ -55,6 +55,13 @@ var heroInit = function (app) {
 		isRanged: false,
 	};
 
+	var artanis = {
+		name: "Artanis",
+		type: warrior,
+		subtitle: "Hierarch of the Daelaam",
+		isRanged: false,
+	};
+
 	var arthas = {
 		name: "Arthas",
 		type: warrior,
@@ -337,6 +344,7 @@ var heroInit = function (app) {
 	var allHeroes = [
 		abathur,
 		anubarak,
+        artanis,
 		arthas,
 		azmodan,
 		brightwing,
