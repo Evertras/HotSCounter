@@ -89,6 +89,13 @@ var heroInit = function (app) {
 		isRanged: false
 	};
 
+    var chogall = {
+        name: "Cho'gall",
+        type: warrior,
+        subtitle: "Twilight's Hammer Chieftain",
+        isRanged: false
+    };
+
 	var diablo = {
 		name: "Diablo",
 		type: warrior,
@@ -349,6 +356,7 @@ var heroInit = function (app) {
 		azmodan,
 		brightwing,
 		chen,
+        chogall,
 		diablo,
 		etc,
 		falstad,
@@ -388,13 +396,13 @@ var heroInit = function (app) {
 	];
 
 	var freeHeroes = [
-        arthas,
-        gazlowe,
-        malfurion,
-        stitches,
-        valla,
-        brightwing,
-        kerrigan
+        butcher,
+        etc,
+        lili,
+        johanna,
+        zagara,
+        rehgar,
+        kaelthas
 	];
 };
 
