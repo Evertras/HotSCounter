@@ -396,13 +396,13 @@ var heroInit = function (app) {
 	];
 
 	var freeHeroes = [
-        butcher,
-        etc,
-        lili,
-        johanna,
-        zagara,
-        rehgar,
-        kaelthas
+        falstad,
+        muradin,
+        nazeebo,
+        raynor,
+        uther,
+        jaina,
+        kerrigan
 	];
 };
 
