@@ -396,13 +396,13 @@ var heroInit = function (app) {
 	];
 
 	var freeHeroes = [
-        falstad,
-        muradin,
-        nazeebo,
-        raynor,
-        uther,
-        jaina,
-        kerrigan
+        etc,
+        illidan,
+        lili,
+        sonya,
+        tychus,
+        sylvanas,
+        tyrande
 	];
 };
 
