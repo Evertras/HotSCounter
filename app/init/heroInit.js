@@ -148,8 +148,7 @@ var heroInit = function (app) {
 	var kaelthas = {
 		name: "Kael'thas",
 		type: assassin,
-		subtitle: "Sun King"
-	};
+		subtitle: "Sun King" };
 
 	var kerrigan = {
 		name: "Kerrigan",
@@ -183,6 +182,13 @@ var heroInit = function (app) {
         name: "Lt. Morales",
         type: support,
         subtitle: "Combat Medic",
+        isRanged: true
+    };
+
+    var lunara = {
+        name: "Lunara",
+        type: assassin,
+        subtitle: "First Daughter of Cenarius",
         isRanged: true
     };
 
@@ -370,6 +376,7 @@ var heroInit = function (app) {
 		lili,
 		leoric,
         ltmorales,
+        lunara,
 		malfurion,
 		muradin,
 		murky,
