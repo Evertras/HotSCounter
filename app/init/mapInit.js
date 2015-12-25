@@ -64,9 +64,13 @@ var mapInit = function (app) {
 		name: "Tomb of the Spider Queen"
 	};
 
-    var infernalShrines = {
-        name: "Infernal Shrines"
-    };
+  var infernalShrines = {
+    name: "Infernal Shrines"
+  };
+
+  var towersOfDoom = {
+    name: "Towers of Doom"
+  };
 
 	var allMaps = [
 		dragonshire,
@@ -76,8 +80,9 @@ var mapInit = function (app) {
 		blackheartsBay,
 		hauntedMines,
 		gardenOfTerror,
-		tombOfTheSpiderQueen,
-        infernalShrines
+    tombOfTheSpiderQueen,
+    infernalShrines,
+    towersOfDoom
 	];
 };
 
