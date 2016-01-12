@@ -124,6 +124,13 @@ var heroInit = function (app) {
 		isRanged: false
 	};
 
+  var graymane = {
+    name: "Graymane",
+    type: assassin,
+    subtitle: "Lord of the Worgen",
+    isRanged: true
+  };
+
 	var illidan = {
 		name: "Illidan",
 		type: assassin,
@@ -357,26 +364,27 @@ var heroInit = function (app) {
 	var allHeroes = [
 		abathur,
 		anubarak,
-        artanis,
+    artanis,
 		arthas,
 		azmodan,
 		brightwing,
 		chen,
-        chogall,
+    chogall,
 		diablo,
 		etc,
 		falstad,
 		gazlowe,
+    graymane,
 		illidan,
 		jaina,
 		johanna,
 		kaelthas,
 		kerrigan,
-        kharazim,
+    kharazim,
 		lili,
 		leoric,
-        ltmorales,
-        lunara,
+    ltmorales,
+    lunara,
 		malfurion,
 		muradin,
 		murky,
@@ -384,7 +392,7 @@ var heroInit = function (app) {
 		nova,
 		raynor,
 		rehgar,
-        rexxar,
+    rexxar,
 		hammer,
 		sonya,
 		stitches,
@@ -403,16 +411,16 @@ var heroInit = function (app) {
 	];
 
 	var freeHeroes = [
-    etc,
-    lili,
-    jaina,
-    johanna,
-    nazeebo,
-    uther,
-    gazlowe,
-    falstad,
-    tassadar,
-    illidan
+    artanis,
+    butcher,
+    diablo,
+    malfurion,
+    tychus,
+    valla,
+    kaelthas,
+    arthas,
+    hammer,
+    brightwing
 	];
 };
 
