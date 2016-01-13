@@ -124,7 +124,7 @@ var heroInit = function (app) {
 		isRanged: false
 	};
 
-  var graymane = {
+  var greymane = {
     name: "Graymane",
     type: assassin,
     subtitle: "Lord of the Worgen",
@@ -374,7 +374,7 @@ var heroInit = function (app) {
 		etc,
 		falstad,
 		gazlowe,
-    graymane,
+    greymane,
 		illidan,
 		jaina,
 		johanna,
