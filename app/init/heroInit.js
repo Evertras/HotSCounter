@@ -125,7 +125,7 @@ var heroInit = function (app) {
 	};
 
   var greymane = {
-    name: "Graymane",
+    name: "Greymane",
     type: assassin,
     subtitle: "Lord of the Worgen",
     isRanged: true
