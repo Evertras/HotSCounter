@@ -411,16 +411,15 @@ var heroInit = function (app) {
 	];
 
 	var freeHeroes = [
-    artanis,
-    butcher,
-    diablo,
-    malfurion,
-    tychus,
-    valla,
-    kaelthas,
-    arthas,
-    hammer,
-    brightwing
+    gazlowe,
+    kerrigan,
+    leoric,
+    muradin,
+    raynor,
+    uther,
+    sonya,
+    sylvanas,
+    ltmorales
 	];
 };
 
