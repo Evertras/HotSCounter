@@ -389,6 +389,7 @@ var heroInit = function (app) {
 		kerrigan,
     kharazim,
 		lili,
+    liming,
 		leoric,
     ltmorales,
     lunara,
