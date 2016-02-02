@@ -178,6 +178,13 @@ var heroInit = function (app) {
 		isRanged: true
 	};
 
+  var liming = {
+    name: "Li-Ming",
+    type: assassin,
+    subtitle: "Rebellious Wizard",
+    isRanged: true
+  };
+
 	var leoric = {
 		name: "Leoric",
 		type: warrior,
