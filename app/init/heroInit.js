@@ -419,15 +419,16 @@ var heroInit = function (app) {
 	];
 
 	var freeHeroes = [
-    gazlowe,
-    kerrigan,
-    leoric,
-    muradin,
-    raynor,
-    uther,
-    sonya,
-    sylvanas,
-    ltmorales
+    artanis,
+    azmodan,
+    diablo,
+    malfurion,
+    thrall,
+    valla,
+    tychus,
+    rehgar,
+    jaina,
+    chen
 	];
 };
 
