@@ -419,16 +419,16 @@ var heroInit = function (app) {
 	];
 
 	var freeHeroes = [
-    artanis,
-    azmodan,
-    diablo,
-    malfurion,
-    thrall,
-    valla,
-    tychus,
-    rehgar,
-    jaina,
-    chen
+    etc,
+    johanna,
+    kaelthas,
+    lili,
+    hammer,
+    butcher,
+    arthas,
+    brightwing,
+    zeratul,
+    lostvikings
 	];
 };
 
