@@ -419,16 +419,16 @@ var heroInit = function (app) {
 	];
 
 	var freeHeroes = [
-    etc,
-    johanna,
-    kaelthas,
-    lili,
-    hammer,
-    butcher,
-    arthas,
-    brightwing,
-    zeratul,
-    lostvikings
+    anubarak,
+    falstad,
+    kharazim,
+    muradin,
+    raynor,
+    zagara,
+    tyrael,
+    sonya,
+    tyrande,
+    greymane
 	];
 };
 
