@@ -419,16 +419,16 @@ var heroInit = function (app) {
 	];
 
 	var freeHeroes = [
-    anubarak,
-    falstad,
-    kharazim,
-    muradin,
-    raynor,
-    zagara,
-    tyrael,
-    sonya,
-    tyrande,
-    greymane
+    diablo,
+    kerrigan,
+    malfurion,
+    nazeebo,
+    sylvanas,
+    valla,
+    tassadar,
+    lunara,
+    stitches,
+    leoric
 	];
 };
 
