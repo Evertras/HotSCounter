@@ -353,6 +353,13 @@ var heroInit = function (app) {
 		isRanged: true
 	};
 
+  var xul = {
+    name: "Xul",
+    type: specialist,
+    subtitle: "Cryptic Necromancer",
+    isRanged: false
+  };
+
 	var zagara = {
 		name: "Zagara",
 		type: specialist,
@@ -414,6 +421,7 @@ var heroInit = function (app) {
 		tyrande,
 		uther,
 		valla,
+    xul,
 		zagara,
 		zeratul
 	];
