@@ -435,16 +435,16 @@ var heroInit = function (app) {
 	];
 
 	var freeHeroes = [
+    raynor,
+    muradin,
+    uther,
+    azmodan,
+    jaina,
     diablo,
-    kerrigan,
-    malfurion,
-    nazeebo,
-    sylvanas,
-    valla,
-    tassadar,
+    zagara,
+    thrall,
     lunara,
-    stitches,
-    leoric
+    brightwing
 	];
 };
 
