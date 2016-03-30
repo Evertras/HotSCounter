@@ -89,12 +89,19 @@ var heroInit = function (app) {
 		isRanged: false
 	};
 
-    var chogall = {
-        name: "Cho'gall",
-        type: warrior,
-        subtitle: "Twilight's Hammer Chieftain",
-        isRanged: false
-    };
+  var chogall = {
+    name: "Cho'gall",
+    type: warrior,
+    subtitle: "Twilight's Hammer Chieftain",
+    isRanged: false
+  };
+
+  var dehaka = {
+    name: "Dehaka",
+    type: warrior,
+    subtitle: "Primal Packleader",
+    isRanged: false
+  };
 
 	var diablo = {
 		name: "Diablo",
@@ -384,6 +391,7 @@ var heroInit = function (app) {
 		brightwing,
 		chen,
     chogall,
+    dehaka,
 		diablo,
 		etc,
 		falstad,
