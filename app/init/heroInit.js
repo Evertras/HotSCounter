@@ -99,7 +99,7 @@ var heroInit = function (app) {
   var dehaka = {
     name: "Dehaka",
     type: warrior,
-    subtitle: "Primal Packleader",
+    subtitle: "Primal Pack Leader",
     isRanged: false
   };
 
