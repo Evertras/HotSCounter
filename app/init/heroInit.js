@@ -325,6 +325,13 @@ var heroInit = function (app) {
 		isRanged: false
 	};
 
+  var tracer = {
+    name: "Tracer",
+    type: assassin,
+    subtitle: "Cavalry",
+    isRanged: true
+  };
+
 	var tychus = {
 		name: "Tychus",
 		type: assassin,
@@ -421,6 +428,7 @@ var heroInit = function (app) {
 		stitches,
 		sylvanas,
 		tassadar,
+    tracer,
 		butcher,
 		lostvikings,
 		thrall,
