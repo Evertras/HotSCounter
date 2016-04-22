@@ -328,7 +328,7 @@ var heroInit = function (app) {
   var tracer = {
     name: "Tracer",
     type: assassin,
-    subtitle: "Cavalry",
+    subtitle: "Agent of Overwatch",
     isRanged: true
   };
 
