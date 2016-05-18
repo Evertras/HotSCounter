@@ -96,6 +96,13 @@ var heroInit = function (app) {
     isRanged: false
   };
 
+  var chromie = {
+    name: "Chromie",
+    type: assassin,
+    subtitle: "Keeper of Time",
+    isRanged: true
+  };
+
   var dehaka = {
     name: "Dehaka",
     type: warrior,
@@ -398,6 +405,7 @@ var heroInit = function (app) {
 		brightwing,
 		chen,
     chogall,
+    chromie,
     dehaka,
 		diablo,
 		etc,
