@@ -227,6 +227,13 @@ var heroInit = function (app) {
 		isRanged: true
 	};
 
+  var medivh = {
+    name: "Medivh",
+    type: specialist,
+    subtitle: "Last Guardian",
+    isRanged: true
+  };
+
 	var muradin = {
 		name: "Muradin",
 		type: warrior,
@@ -424,6 +431,7 @@ var heroInit = function (app) {
     ltmorales,
     lunara,
 		malfurion,
+    medivh,
 		muradin,
 		murky,
 		nazeebo,
