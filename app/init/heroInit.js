@@ -145,6 +145,13 @@ var heroInit = function (app) {
     isRanged: true
   };
 
+  var guldan = {
+    name: "Gul'dan",
+    type: assassin,
+    subtitle: "Darkness Incarnate",
+    isRanged: true
+  };
+
 	var illidan = {
 		name: "Illidan",
 		type: assassin,
@@ -419,6 +426,7 @@ var heroInit = function (app) {
 		falstad,
 		gazlowe,
     greymane,
+    guldan,
 		illidan,
 		jaina,
 		johanna,
