@@ -69,6 +69,13 @@ var heroInit = function (app) {
 		isRanged: false
 	};
 
+	var auriel = {
+		name: "Auriel",
+		type: support,
+		subtitle: "Archangel of Hope",
+		isRanged: true
+	};
+
 	var azmodan = {
 		name: "Azmodan",
 		type: specialist,
@@ -415,6 +422,7 @@ var heroInit = function (app) {
 		anubarak,
     artanis,
 		arthas,
+    auriel,
 		azmodan,
 		brightwing,
 		chen,
