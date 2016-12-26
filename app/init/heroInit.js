@@ -276,6 +276,13 @@ var heroInit = function (app) {
 		isRanged: true
 	};
 
+  var ragnaros = {
+    name: "Ragnaros",
+    type: assassin,
+    subtitle: "Firelord",
+    isRanged: false
+  };
+
 	var raynor = {
 		name: "Raynor",
 		type: assassin,
@@ -303,6 +310,13 @@ var heroInit = function (app) {
 		subtitle: "Siege Tank Operator",
 		isRanged: true
 	};
+
+  var samuro = {
+    name: "Samuro",
+    type: assassin,
+    subtitle: "Blademaster",
+    isRanged: false
+  };
 
 	var sonya = {
 		name: "Sonya",
@@ -395,6 +409,13 @@ var heroInit = function (app) {
 		isRanged: true
 	};
 
+  var varian = {
+    name: "Varian",
+    type: warrior,
+    subtitle: "High King of the Alliance",
+    isRanged: false
+  };
+
   var xul = {
     name: "Xul",
     type: specialist,
@@ -408,6 +429,13 @@ var heroInit = function (app) {
 		subtitle: "Broodmother of the Swarm",
 		isRanged: true
 	};
+
+  var zarya = {
+    name: "Zarya",
+    type: warrior,
+    subtitle: "Defender of Russia",
+    isRanged: true
+  };
 
 	var zeratul = {
 		name: "Zeratul",
@@ -452,10 +480,12 @@ var heroInit = function (app) {
 		murky,
 		nazeebo,
 		nova,
+    ragnaros,
 		raynor,
 		rehgar,
     rexxar,
 		hammer,
+    samuro,
 		sonya,
 		stitches,
 		sylvanas,
@@ -468,8 +498,10 @@ var heroInit = function (app) {
 		tyrael,
 		tyrande,
 		uther,
+    varian,
 		valla,
     xul,
+    zarya,
 		zagara,
 		zeratul
 	];
