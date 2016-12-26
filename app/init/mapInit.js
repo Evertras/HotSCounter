@@ -52,6 +52,18 @@ var mapInit = function (app) {
 		name: "Blackheart's Bay"
 	};
 
+  var braxisHoldout = {
+    name: "Braxis Holdout"
+  };
+
+  var lostCaverns = {
+    name: "Lost Caverns"
+  };
+
+  var warheadJunction = {
+    name: "Warhead Junction"
+  };
+
 	var hauntedMines = {
 		name: "Haunted Mines"
 	};
@@ -82,7 +94,10 @@ var mapInit = function (app) {
 		gardenOfTerror,
     tombOfTheSpiderQueen,
     infernalShrines,
-    towersOfDoom
+    towersOfDoom,
+    lostCaverns,
+    braxisHoldout,
+    warheadJunction
 	];
 };
 
