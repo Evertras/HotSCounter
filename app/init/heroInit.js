@@ -48,6 +48,13 @@ var heroInit = function (app) {
 		isRanged: false,
 	};
 
+  var alarak = {
+    name: "Alarak",
+    type: assassin,
+    subtitle: "Highlord of the Taldarim",
+    isRanged: false
+  };
+
 	var anubarak = {
 		name: "Anub'arak",
 		type: warrior,
@@ -447,6 +454,7 @@ var heroInit = function (app) {
 
 	var allHeroes = [
 		abathur,
+    alarak,
 		anubarak,
     artanis,
 		arthas,
