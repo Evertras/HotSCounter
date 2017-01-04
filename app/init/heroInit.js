@@ -227,19 +227,19 @@ var heroInit = function (app) {
 		isRanged: false
 	};
 
-    var ltmorales = {
-        name: "Lt. Morales",
-        type: support,
-        subtitle: "Combat Medic",
-        isRanged: true
-    };
+  var ltmorales = {
+    name: "Lt. Morales",
+    type: support,
+    subtitle: "Combat Medic",
+    isRanged: true
+  };
 
-    var lunara = {
-        name: "Lunara",
-        type: assassin,
-        subtitle: "First Daughter of Cenarius",
-        isRanged: true
-    };
+  var lunara = {
+    name: "Lunara",
+    type: assassin,
+    subtitle: "First Daughter of Cenarius",
+    isRanged: true
+  };
 
 	var malfurion = {
 		name: "Malfurion",
@@ -451,6 +451,13 @@ var heroInit = function (app) {
 		isRanged: false
 	};
 
+  var zuljin = {
+    name: "Zul'jin",
+    type: assassin,
+    subtitle: "Warlord of the Amani",
+    isRanged: true
+  };
+
 
 	var allHeroes = [
 		abathur,
@@ -511,7 +518,8 @@ var heroInit = function (app) {
     xul,
     zarya,
 		zagara,
-		zeratul
+		zeratul,
+    zuljin
 	];
 
 	var freeHeroes = [
