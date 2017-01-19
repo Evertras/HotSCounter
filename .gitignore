@@ -2,3 +2,5 @@ node_modules/
 concat.js
 public/js/hotscounter.js
 .sass-cache
+tmp/
+

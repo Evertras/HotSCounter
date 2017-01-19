@@ -1,13 +1,13 @@
 {
 	"dev": {
-		"MONGO_URI": "mongodb://localhost/hotscomp_dev"
+		"MONGO_URI": "mongodb://mongo/hotscomp_dev"
 	},
 
 	"prod": {
-		"MONGO_URI": "mongodb://localhost/hotscomp"
+		"MONGO_URI": "mongodb://mongo:27017/hotscomp"
 	},
 
 	"protractor": {
-		"MONGO_URI": "mongodb://localhost/hotscomp_protractor"
+		"MONGO_URI": "mongodb://mongo/hotscomp_protractor"
 	}
 }
