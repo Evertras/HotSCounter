@@ -409,6 +409,13 @@ var heroInit = function (app) {
 		isRanged: false
 	};
 
+  var valeera = {
+    name: "Valeera",
+    type: assassin,
+    subtitle: "Shadow of the Uncrowned",
+    isRanged: false
+  };
+
 	var valla = {
 		name: "Valla",
 		type: assassin,
@@ -514,6 +521,7 @@ var heroInit = function (app) {
 		tyrande,
 		uther,
     varian,
+    valeera,
 		valla,
     xul,
     zarya,
@@ -523,16 +531,16 @@ var heroInit = function (app) {
 	];
 
 	var freeHeroes = [
+    malfurion,
+    valla,
+    stitches,
+    kerrigan,
+    butcher,
+    zagara,
+    azmodan,
+    ltmorales,
     arthas,
-    auriel,
-    chromie,
-    muradin,
-    raynor,
-    xul,
-    tassadar,
-    sonya,
-    greymane,
-    tracer
+    chen
 	];
 };
 
