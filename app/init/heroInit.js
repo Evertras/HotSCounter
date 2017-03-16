@@ -234,6 +234,13 @@ var heroInit = function (app) {
     isRanged: true
   };
 
+  var lucio = {
+    name: "Lucio",
+    type: support,
+    subtitle: "Freedom Fighting DJ",
+    isRanged: true
+  };
+
   var lunara = {
     name: "Lunara",
     type: assassin,
@@ -280,6 +287,13 @@ var heroInit = function (app) {
 		name: "Nova",
 		type: assassin,
 		subtitle: "Dominion Ghost",
+		isRanged: true
+	};
+
+	var probius = {
+		name: "Probius",
+		type: specialist,
+		subtitle: "Brave Probe",
 		isRanged: true
 	};
 
@@ -468,51 +482,53 @@ var heroInit = function (app) {
 
 	var allHeroes = [
 		abathur,
-    alarak,
+		alarak,
 		anubarak,
-    artanis,
+		artanis,
 		arthas,
-    auriel,
+		auriel,
 		azmodan,
 		brightwing,
 		chen,
-    chogall,
-    chromie,
-    dehaka,
+		chogall,
+		chromie,
+		dehaka,
 		diablo,
 		etc,
 		falstad,
 		gazlowe,
-    greymane,
-    guldan,
+		greymane,
+		guldan,
 		illidan,
 		jaina,
 		johanna,
 		kaelthas,
 		kerrigan,
-    kharazim,
+		kharazim,
 		lili,
-    liming,
+		liming,
 		leoric,
-    ltmorales,
-    lunara,
+		ltmorales,
+		lucio,
+		lunara,
 		malfurion,
-    medivh,
+		medivh,
 		muradin,
 		murky,
 		nazeebo,
 		nova,
-    ragnaros,
+		probius,
+		ragnaros,
 		raynor,
 		rehgar,
-    rexxar,
+		rexxar,
 		hammer,
-    samuro,
+		samuro,
 		sonya,
 		stitches,
 		sylvanas,
 		tassadar,
-    tracer,
+		tracer,
 		butcher,
 		lostvikings,
 		thrall,
@@ -520,27 +536,17 @@ var heroInit = function (app) {
 		tyrael,
 		tyrande,
 		uther,
-    varian,
-    valeera,
+		varian,
+		valeera,
 		valla,
-    xul,
-    zarya,
+		xul,
+		zarya,
 		zagara,
 		zeratul,
-    zuljin
+		zuljin
 	];
 
 	var freeHeroes = [
-    malfurion,
-    valla,
-    stitches,
-    kerrigan,
-    butcher,
-    zagara,
-    azmodan,
-    ltmorales,
-    arthas,
-    chen
 	];
 };
 
