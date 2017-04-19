@@ -96,6 +96,13 @@ var heroInit = function (app) {
 		isRanged: true
 	};
 
+  var cassia = {
+    name: "Cassia",
+    type: assassin,
+    subtitle: "Amazon Warmatron",
+    isRanged: true
+  };
+
 	var chen = {
 		name: "Chen",
 		type: warrior,
@@ -489,6 +496,7 @@ var heroInit = function (app) {
 		auriel,
 		azmodan,
 		brightwing,
+		cassia,
 		chen,
 		chogall,
 		chromie,
