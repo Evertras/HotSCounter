@@ -159,6 +159,13 @@ var heroInit = function (app) {
 		isRanged: false
 	};
 
+  var genji = {
+    name: "Genji",
+    type: assassin,
+    subtitle: "Cybernetic Ninja",
+    isRanged: true
+  };
+
   var greymane = {
     name: "Greymane",
     type: assassin,
@@ -505,6 +512,7 @@ var heroInit = function (app) {
 		etc,
 		falstad,
 		gazlowe,
+                genji,
 		greymane,
 		guldan,
 		illidan,
