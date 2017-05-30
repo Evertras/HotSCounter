@@ -140,6 +140,13 @@ var heroInit = function(app) {
     isRanged: false
   };
 
+  var dva = {
+    name: "D.Va",
+    type: warrior,
+    subtitle: "MEKA Pilot",
+    isRanged: true
+  };
+
   var etc = {
     name: "E.T.C.",
     type: warrior,
@@ -512,6 +519,7 @@ var heroInit = function(app) {
     chromie,
     dehaka,
     diablo,
+    dva,
     etc,
     falstad,
     gazlowe,
