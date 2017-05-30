@@ -1,24 +1,24 @@
 {
-	"bitwise": true,
-	"curly": true,
-	"eqeqeq": true,
-	"forin": true,
-	"freeze": true,
-	"futurehostile": true,
-	"latedef": true,
-	"nocomma": true,
-	"nonbsp": true,
-	"nonew": true,
-	"singleGroups": true,
-	"undef": true,
-	"unused": true,
+  "bitwise": true,
+  "curly": true,
+  "eqeqeq": true,
+  "forin": true,
+  "freeze": true,
+  "futurehostile": true,
+  "latedef": true,
+  "nocomma": true,
+  "nonbsp": true,
+  "nonew": true,
+  "singleGroups": true,
+  "undef": true,
+  "unused": true,
 
-	"jquery": true,
-	"node": true,
+  "jquery": true,
+  "node": true,
 
-	"predef": [
-		"angular",
-		"require",
-		"module"
-	]
+  "predef": [
+    "angular",
+    "require",
+    "module"
+  ]
 }

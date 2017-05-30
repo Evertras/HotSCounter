@@ -17,78 +17,77 @@ var dbURI = 'mongodb://localhost/counterModelTests';
 var sampleHero;
 
 describe('Counter Model', function() {
-	before(function(done) {
-		if (mongoose.connection.db) {
-			return done();
-		}
+  before(function(done) {
+    if (mongoose.connection.db) {
+      return done();
+    }
 
-		mongoose.connect(dbURI, function(err) {
-			if (err) {
-				throw err;
-			}
+    mongoose.connect(dbURI, function(err) {
+      if (err) {
+        throw err;
+      }
 
-			sampleHero = new Hero ({
-				name: "Sample Hero",
-				type: "Warrior",
-				subtitle: "Sample Master",
-				isRanged: true
-			});
+      sampleHero = new Hero({
+        name: "Sample Hero",
+        type: "Warrior",
+        subtitle: "Sample Master",
+        isRanged: true
+      });
 
-			sampleHero.save(done);
-		});
-	});
+      sampleHero.save(done);
+    });
+  });
 
-	it('should save correctly with valid values', function(done) {
-		var counter = new Counter({
-			patch: "Test Patch",
-		    	source: "0.0.0.0",
-		    	type: "Counter",
-		    	votes: [],
-		    	details: "A counter of some sort",
-		    	heroID: sampleHero._id
-		});
-		console.log(counter);
+  it('should save correctly with valid values', function(done) {
+    var counter = new Counter({
+      patch: "Test Patch",
+      source: "0.0.0.0",
+      type: "Counter",
+      votes: [],
+      details: "A counter of some sort",
+      heroID: sampleHero._id
+    });
+    console.log(counter);
 
-		counter.save(done);
-	});
+    counter.save(done);
+  });
 
-	it('should not save correctly with invalid type', function(done) {
-		var counter = new Counter({
-			patch: "Test Patch",
-		    	source: "0.0.0.0",
-		    	type: "Invalid type",
-		    	votes: [],
-		    	details: "A counter of some sort",
-		    	heroID: sampleHero._id
-		});
+  it('should not save correctly with invalid type', function(done) {
+    var counter = new Counter({
+      patch: "Test Patch",
+      source: "0.0.0.0",
+      type: "Invalid type",
+      votes: [],
+      details: "A counter of some sort",
+      heroID: sampleHero._id
+    });
 
-		counter.save(function(err) {
-			should.exist(err);
-			err.should.have.property('message', 'Validation failed');
-			done();
-		});
-	});
+    counter.save(function(err) {
+      should.exist(err);
+      err.should.have.property('message', 'Validation failed');
+      done();
+    });
+  });
 
-	it('should not save correctly with too-long details', function(done) {
-		var counter = new Counter({
-			patch: "Test Patch",
-		    	source: "0.0.0.0",
-		    	type: "Counter",
-		    	votes: [],
-		    	details: "Repeat ",
-		    	heroID: sampleHero._id
-		});
+  it('should not save correctly with too-long details', function(done) {
+    var counter = new Counter({
+      patch: "Test Patch",
+      source: "0.0.0.0",
+      type: "Counter",
+      votes: [],
+      details: "Repeat ",
+      heroID: sampleHero._id
+    });
 
-		var maxChars = 1024;
-		
-		for (var i = 0; i < maxChars + 1; ++i)
-		{
-			counter.details += 'x';
-		}
+    var maxChars = 1024;
 
-		counter.save(function(err) {
-			should.exist(err);
-			done();
-		});
-	});
+    for (var i = 0; i < maxChars + 1; ++i) {
+      counter.details += 'x';
+    }
+
+    counter.save(function(err) {
+      should.exist(err);
+      done();
+    });
+  });
 });

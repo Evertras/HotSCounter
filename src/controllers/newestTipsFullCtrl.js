@@ -1,17 +1,17 @@
 (function() {
-	var app = angular.module('newestTipsFullCtrl', []);
+  var app = angular.module('newestTipsFullCtrl', []);
 
-	app.controller('newestTipsFullCtrl', ['$http', '$scope', function($http, $scope) {
-		var maxTips = 50;
+  app.controller('newestTipsFullCtrl', ['$http', '$scope', function($http, $scope) {
+    var maxTips = 50;
 
-		function updateNewestTips() {
-			$http.get('/api/counter/newest/' + maxTips).success(function (result) {
-				$scope.newestTips = result;
-			});
-		}
+    function updateNewestTips() {
+      $http.get('/api/counter/newest/' + maxTips).success(function(result) {
+        $scope.newestTips = result;
+      });
+    }
 
-		updateNewestTips();
+    updateNewestTips();
 
-		setInterval(updateNewestTips, 60 * 1000);
-	}]);
+    setInterval(updateNewestTips, 60 * 1000);
+  }]);
 })();

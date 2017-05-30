@@ -1,26 +1,27 @@
 (function() {
-	var app = angular.module('heroListCtrl', ['heroDataService']);
+  var app = angular.module('heroListCtrl', ['heroDataService']);
 
-	app.controller('heroListCtrl', ['heroDataService', '$scope', function(heroDataService, $scope) {
-		$scope.allHeroes = heroDataService.allHeroes;
+  app.controller('heroListCtrl', ['heroDataService', '$scope', function(heroDataService, $scope) {
+    $scope.allHeroes = heroDataService.allHeroes;
 
-		$scope.allHeroChunks = [];
+    $scope.allHeroChunks = [];
 
-		$scope.$watch(function() { return $scope.allHeroes.length; },
-			function() {
-				$scope.allHeroChunks = [];
+    $scope.$watch(function() {
+        return $scope.allHeroes.length; },
+      function() {
+        $scope.allHeroChunks = [];
 
-				var chunks = 3;
+        var chunks = 3;
 
-				var split = Math.ceil($scope.allHeroes.length / 3);
+        var split = Math.ceil($scope.allHeroes.length / 3);
 
-				if (split > 1) {
-					var sortedHeroes = _.sortBy($scope.allHeroes, 'name');
+        if (split > 1) {
+          var sortedHeroes = _.sortBy($scope.allHeroes, 'name');
 
-					for (var i = 0; i < chunks; ++i) {
-						$scope.allHeroChunks.push(sortedHeroes.slice(split*i, split*i + split));
-					}
-				}
-			});
-	}]);
+          for (var i = 0; i < chunks; ++i) {
+            $scope.allHeroChunks.push(sortedHeroes.slice(split * i, split * i + split));
+          }
+        }
+      });
+  }]);
 })();

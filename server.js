@@ -21,9 +21,9 @@ app.use(bodyParser.json());
 app.use(methodOverride('X-HTTP-Method-Override'));
 
 app.log = function(msg) {
-	var prefix = '[' + (new Date()).toISOString() + '] - ';
+  var prefix = '[' + (new Date()).toISOString() + '] - ';
 
-	console.log(prefix + msg);
+  console.log(prefix + msg);
 };
 
 var routes = require('./app/routes')(app);
@@ -36,24 +36,24 @@ var mapInit = require('./app/init/mapInit');
 app.log('Connecting to ' + config.MONGO_URI);
 
 mongoose.connect(config.MONGO_URI, function(err) {
-	if (err) { 
-		app.log('DB connection ERROR: ', err);
-	} else {
-		app.log('DB connection success!');
-	}
+  if (err) {
+    app.log('DB connection ERROR: ', err);
+  } else {
+    app.log('DB connection success!');
+  }
 
-	mongoose.connection.on('error', function (err) {
-		app.log('!!!!DB ERROR: ' + err);
-	});
+  mongoose.connection.on('error', function(err) {
+    app.log('!!!!DB ERROR: ' + err);
+  });
 });
 
 (new heroInit(app)).initializeHeroes();
 (new mapInit(app)).initializeMaps();
 
 function errorHandler(err, req, res, next) {
-	app.log("UNHANDLED ERROR: " + err);
+  app.log("UNHANDLED ERROR: " + err);
 
-	res.status(500).send({ error: err });
+  res.status(500).send({ error: err });
 }
 
 app.use(errorHandler);
