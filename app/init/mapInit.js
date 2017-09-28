@@ -84,6 +84,10 @@ var mapInit = function(app) {
     name: "Towers of Doom"
   };
 
+  var volskaya = {
+    name: "Volskaya Foundry"
+  }
+
   var allMaps = [
     dragonshire,
     battlefieldOfEternity,
