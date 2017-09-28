@@ -57,6 +57,13 @@ var heroInit = function(app) {
     isRanged: false
   };
 
+  var ana = {
+    name: "Ana",
+    type: support,
+    subtitle: "Veteran Sniper",
+    isRanged: true
+  };
+
   var anubarak = {
     name: "Anub'arak",
     type: warrior,
@@ -161,6 +168,13 @@ var heroInit = function(app) {
     isRanged: true
   };
 
+  var garrosh = {
+    name: "Garrosh",
+    type: warrior,
+    subtitle: "Son of Hellscream",
+    isRanged: false
+  };
+
   var gazlowe = {
     name: "Gazlowe",
     type: specialist,
@@ -213,7 +227,15 @@ var heroInit = function(app) {
   var kaelthas = {
     name: "Kael'thas",
     type: assassin,
-    subtitle: "Sun King"
+    subtitle: "Sun King",
+    isRanged: true
+  };
+
+  var kelthuzad = {
+    name: "Kel'Thuzad",
+    type: assassin,
+    subtitle: "Archlich of Naxxramas"
+    isRanged: true
   };
 
   var kerrigan = {
@@ -278,6 +300,13 @@ var heroInit = function(app) {
     subtitle: "Archdruid",
     isRanged: true
   };
+
+  var malthael = {
+    name: "Malthael",
+    type: assassin,
+    subtitle: "Aspect of Death",
+    isRanged: false
+  },
 
   var medivh = {
     name: "Medivh",
@@ -374,6 +403,13 @@ var heroInit = function(app) {
     name: "Stitches",
     type: warrior,
     subtitle: "Terror of Darkshire",
+    isRanged: false
+  };
+
+  var stukov = {
+    name: "Stukov",
+    type: support,
+    subtitle: "Infested Admiral",
     isRanged: false
   };
 
@@ -507,6 +543,7 @@ var heroInit = function(app) {
   var allHeroes = [
     abathur,
     alarak,
+    ana,
     anubarak,
     artanis,
     arthas,
@@ -522,6 +559,7 @@ var heroInit = function(app) {
     dva,
     etc,
     falstad,
+    garrosh,
     gazlowe,
     genji,
     greymane,
@@ -530,6 +568,7 @@ var heroInit = function(app) {
     jaina,
     johanna,
     kaelthas,
+    kelthuzad,
     kerrigan,
     kharazim,
     lili,
@@ -539,6 +578,7 @@ var heroInit = function(app) {
     lucio,
     lunara,
     malfurion,
+    malthael,
     medivh,
     muradin,
     murky,
@@ -553,6 +593,7 @@ var heroInit = function(app) {
     samuro,
     sonya,
     stitches,
+    stukov,
     sylvanas,
     tassadar,
     tracer,
