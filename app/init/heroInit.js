@@ -234,7 +234,7 @@ var heroInit = function(app) {
   var kelthuzad = {
     name: "Kel'Thuzad",
     type: assassin,
-    subtitle: "Archlich of Naxxramas"
+    subtitle: "Archlich of Naxxramas",
     isRanged: true
   };
 
@@ -306,7 +306,7 @@ var heroInit = function(app) {
     type: assassin,
     subtitle: "Aspect of Death",
     isRanged: false
-  },
+  };
 
   var medivh = {
     name: "Medivh",

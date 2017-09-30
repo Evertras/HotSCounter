@@ -86,7 +86,7 @@ var mapInit = function(app) {
 
   var volskaya = {
     name: "Volskaya Foundry"
-  }
+  };
 
   var allMaps = [
     dragonshire,
@@ -101,7 +101,8 @@ var mapInit = function(app) {
     towersOfDoom,
     lostCaverns,
     braxisHoldout,
-    warheadJunction
+    warheadJunction,
+    volskaya
   ];
 };
 
