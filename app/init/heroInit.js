@@ -224,6 +224,13 @@ var heroInit = function(app) {
     isRanged: false
   };
 
+  var junkrat = {
+    name: "Junkrat",
+    type: assassin,
+    subtitle: "Junker Demolitionist",
+    isRanged: true
+  };
+
   var kaelthas = {
     name: "Kael'thas",
     type: assassin,
@@ -567,6 +574,7 @@ var heroInit = function(app) {
     illidan,
     jaina,
     johanna,
+    junkrat,
     kaelthas,
     kelthuzad,
     kerrigan,
