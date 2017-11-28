@@ -57,6 +57,13 @@ var heroInit = function(app) {
     isRanged: false
   };
 
+  var alexstrasza = {
+    name: "Alexstrasza",
+    type: support,
+    subtitle: "Life Binder",
+    isRanged: true
+  };
+
   var ana = {
     name: "Ana",
     type: support,
@@ -550,6 +557,7 @@ var heroInit = function(app) {
   var allHeroes = [
     abathur,
     alarak,
+    alexstrasza,
     ana,
     anubarak,
     artanis,
