@@ -105,6 +105,14 @@ var heroInit = function(app) {
     subtitle: "Lord of Sin",
     isRanged: true
   };
+
+  var blaze = {
+    name: "Blaze",
+    type: warrior,
+    subtitle: "Veteran Firebat",
+    isRanged: true
+  };
+
   var brightwing = {
     name: "Brightwing",
     type: specialist,
@@ -207,6 +215,13 @@ var heroInit = function(app) {
     name: "Gul'dan",
     type: assassin,
     subtitle: "Darkness Incarnate",
+    isRanged: true
+  };
+
+  var hanzo = {
+    name: "Hanzo",
+    type: assassin,
+    subtitle: "Master Assasin",
     isRanged: true
   };
 
@@ -564,6 +579,7 @@ var heroInit = function(app) {
     arthas,
     auriel,
     azmodan,
+    blaze,
     brightwing,
     cassia,
     chen,
@@ -579,6 +595,7 @@ var heroInit = function(app) {
     genji,
     greymane,
     guldan,
+    hanzo,
     illidan,
     jaina,
     johanna,
