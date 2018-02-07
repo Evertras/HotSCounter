@@ -323,6 +323,13 @@ var heroInit = function(app) {
     isRanged: true
   };
 
+  var maiev = {
+    name: "Maiev",
+    type: assassin,
+    subtitle: "Warden",
+    isRanged: false
+  };
+
   var malfurion = {
     name: "Malfurion",
     type: support,
@@ -568,7 +575,6 @@ var heroInit = function(app) {
     isRanged: true
   };
 
-
   var allHeroes = [
     abathur,
     alarak,
@@ -610,6 +616,7 @@ var heroInit = function(app) {
     ltmorales,
     lucio,
     lunara,
+    maiev,
     malfurion,
     malthael,
     medivh,
@@ -651,3 +658,4 @@ var heroInit = function(app) {
 };
 
 module.exports = heroInit;
+
